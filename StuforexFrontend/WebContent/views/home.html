@@ -1,0 +1,107 @@
+<html>
+
+<head>
+
+<link rel = "stylesheet" href = "resources/css/home.css" />	
+
+
+</head>
+
+
+<body>
+
+
+<div class="container">
+	<marquee>
+		<h2 style = "color : #FFA500">Welcome : {{currentUser.firstname}}&nbsp;&nbsp;{{currentUser.lastname}}</h2>
+	</marquee>
+	
+	<br/>
+	<br/>
+	
+	<h4><a href = "#!/getAllBlogs" ng-show = "currentUser.role == 'ADMIN'">Number of blog posts that are yet to be approved = {{getBlogPostsWaitingForApproval.length}}</a></h4>
+	
+	<br/>
+	
+	<hr style = "border : 1px solid #000000" />
+	
+	<!-- Template page content -->
+	<div class="content-section-b">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-5 col-sm-6">
+
+					<h2 class="section-heading text-info">
+						Job Section<br>
+					</h2>
+					<p class="lead text-success">Contains job description and selection criteria .</p>
+				</div>
+				<div class="col-lg-5 col-lg-offset-2 col-sm-6">
+					<img class="img-responsive" src="resources/images/job_section.jpg" alt="">
+				</div>
+			</div>
+
+		</div>
+		<!-- /.container -->
+
+	</div>
+	<!-- /.content-section-b -->
+
+
+	<hr style = "border : 1px solid #000000" />
+	
+	<div class="content-section-b">
+
+		<div class="container">
+
+			<div class="row">
+				<div class="col-lg-5 col-lg-offset-1 col-sm-push-6  col-sm-6">
+
+					
+					<h2 class="section-heading text-info">
+						Blog Section<br>
+					</h2>
+					<p class="lead text-success">Informative discussion platform to share ideas .</p>
+				</div>
+				<div class="col-lg-5 col-sm-pull-6  col-sm-6">
+					<img class="img-responsive" src="resources/images/blog_section.jpg" alt=""
+						style="width: 275px; height: 183px;">
+				</div>
+			</div>
+
+		</div>
+		<!-- /.container -->
+
+	</div>
+	<!-- /.content-section-b -->
+
+
+	<hr style = "border : 1px solid #000000" />
+	
+	<div class="content-section-b">
+
+		<div class="container">
+
+			<div class="row">
+				<div class="col-lg-5 col-sm-6">
+
+					<h2 class="section-heading text-info">
+						Chat Room<br>
+					</h2>
+					<p class="lead text-success">Share information via text with a group of other users using synchronous as well as asynchronous conference .</p>
+				</div>
+				<div class="col-lg-5 col-lg-offset-2 col-sm-6">
+					<img class="img-responsive" src="resources/images/chat_section.jpg" alt="" style="width: 275px; height: 183px;">
+				</div>
+			</div>
+
+		</div>
+		<!-- /.container -->
+
+	</div>
+	<!-- /.content-section-b -->
+	
+</div>
+
+</body>	
+</html>

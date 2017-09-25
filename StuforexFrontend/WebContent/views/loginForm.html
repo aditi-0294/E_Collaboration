@@ -1,0 +1,114 @@
+<h3>
+	<b><span style="color: red">{{error.message}}</span></b>
+</h3>
+<h3>
+	<b><span style="color: blue">{{logoutSuccess}}</span></b>
+</h3>
+
+<div class="container">
+
+
+
+
+	<div class="row">
+		<!-- Start of first row class -->
+		<div class="col-md-offset-3 col-md-6">
+			<!-- start of col-md-3 class (3 and 6 resp) -->
+			<div class="panel panel-primary">
+				<!-- Start of primary panel class -->
+				<div class="panel-heading">
+					<!-- Start of panel-heading class -->
+					<h3>Login Form</h3>
+				</div>
+				<!-- End of panel-heading class -->
+
+				<div class="panel-body">
+					<!-- Start of panel-body class -->
+
+					<!--  Start of form class -->
+					<form class="form-horizontal" id="loginForm">
+
+						<!-- For username : -->
+						<div class="form-group">
+							<!-- Start of first form group -->
+
+							<br /> <label for="username" class="col-md-3 control-label">
+								UserName&nbsp;&nbsp; : </label>
+
+							<div class="col-md-8">
+								<!-- start of col-md-8 class -->
+
+								<input type="text" ng-model="user.username" class="form-control"
+									required />
+
+							</div>
+							<!-- End of col-md-8 class -->
+
+						</div>
+						<!-- End of first form-group -->
+
+						<!-- Username part ends -->
+
+
+						<!-- For password : -->
+						<div class="form-group">
+							<!-- Start of second form group -->
+
+							<br /> <label for="password" class="col-md-3 control-label">
+								Password&nbsp;&nbsp; : </label>
+
+							<div class="col-md-8">
+								<!-- start of col-md-8 class -->
+
+								<input type="password" ng-model="user.password"
+									class="form-control" required />
+
+							</div>
+							<!-- End of col-md-8 class -->
+
+						</div>
+						<!-- End of second form-group -->
+
+						<!-- Password part ends -->
+
+
+						<!-- For login button : -->
+						<div class="form-group">
+							<!-- Start of second form group -->
+
+							<br />
+
+
+							<div class="col-md-offset-4 col-md-8">
+								<!-- start of col-md-8 class -->
+
+								<input type="submit" ng-click="validateUser()"
+									value="Login / Sign-In" class="btn btn-primary" />
+
+							</div>
+							<!-- End of col-md-8 class -->
+
+						</div>
+						<!-- End of second form-group -->
+
+						<!-- login button part ends -->
+
+
+					</form>
+
+
+					<!-- End of form-class -->
+
+				</div>
+				<!-- End of panel-body class -->
+
+			</div>
+			<!-- End of primary panel class -->
+		</div>
+		<!-- end of col-md-3 class (3 and 6 resp) -->
+	</div>
+	<!-- End of first row class -->
+
+
+
+</div>
