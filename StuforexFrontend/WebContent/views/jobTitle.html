@@ -1,0 +1,230 @@
+<html>
+
+<head>
+
+ 
+<link rel = "stylesheet" href = "resources/css/viewJob.css" />
+
+<style type="text/css">
+
+.inputText {
+			border: 1px solid #ccc;    
+            border-radius: 10px;    
+            background-color: #ffffff;    
+            box-shadow: 1px 1px 1px 1px #ccc;    
+            width: 230px;    
+            height: 30px;    
+}
+
+.table {
+		/*	background-color : #E3E4FA ;
+			color : #E5E4E2 ; */
+			color : #FDEEF4 ;
+}
+
+.btn {
+	
+}
+</style>
+
+</head>
+
+<body>
+
+	<div class="container">
+		<!-- start of first div -->
+
+		<div class="row">
+			<!-- start of row class -->
+
+
+
+			<!-- Start : Adding Search text boxes -->
+			<h3 align="left" style="color: #FFA500">
+				<strong><i>Search Jobs :</i></strong>
+			</h3>
+
+			<br /> 
+			
+			<b span="pull-left" style = "color : #FFF380">Title&nbsp;&nbsp; : &nbsp;&nbsp; <input
+				ng-model="searchText.jobTitle" class = "inputText"></b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<!--#463E3F-->
+			
+			<b span="pull-center" style = "color : #FFFF00">Required Skills&nbsp;&nbsp; : &nbsp;&nbsp;<input 
+				ng-model="searchText.skillRequired" class = "inputText"></b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <!-- #483C32 -->
+			
+			
+			<b span="pull-right" style = "color : #FFFF00">Date(postedOn)&nbsp;&nbsp; : &nbsp;&nbsp; <input
+				ng-model="searchText.postedOn" class = "inputText"></b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<!-- #463E3F -->
+
+<br/><br/>
+			<b span="pull-right" style = "color : #FFFF00" ng-show = "currentUser.role == 'ADMIN'">Job Id&nbsp;&nbsp; : &nbsp;&nbsp; <input
+				ng-model="searchText.id" class = "inputText"></b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<!-- #463E3F -->
+
+			<!-- End : Adding Search text boxes -->
+
+			<br /> <br /> 
+
+			<h3 align="left">
+				<b><i><span style="color: #FFA500">Available Jobs :</span></i></b>
+			</h3>
+
+			<br />
+
+			<table class="table table-bordered">
+				<!-- start of table class -->
+
+				<colgroup ng-show = "currentUser.role == 'ADMIN'">
+					<col style="width: 2em;" />
+        			<col style="width: 5em;" />
+        			<col style="width: 9em;" />
+        			<col style="width: 4em;" />
+        			<col style="width: 9em;" />
+				</colgroup>
+				
+				<thead>
+
+					<tr style = "color : #5bc0de">
+
+						<th>Job Id.</th>
+
+						<th>Job Title</th>
+
+						<th>Required Skills</th>
+
+						<th>Posted On</th>
+ 
+						<th>Action</th> 
+
+					</tr>
+
+				</thead>
+
+				<tbody>
+
+					<!-- 
+	<tr ng-repeat = "job in jobs"> <!-- job - variable ; jobs : frontend - jobcontroller.js - $scope. ..... --
+-->
+
+					<!-- For Search Text Boxes : -->
+
+					<tr ng-repeat="job in jobs | filter : searchText">
+
+						<td>{{job.id}}</td>
+
+					<!-- 	<td>{{job.jobTitle}}    -->
+
+						 
+						<td>
+							<a href="" ng-click="getJobDetails(job.id)" style = " color : #e0boff">{{job.jobTitle}}</a>
+						</td>
+						
+						
+						<td>{{job.skillRequired}}</td>
+
+						<td>{{job.postedOn | date : "dd MMMM yyyy"}}</td>
+
+ 						 	
+		<td>
+			
+			<a href = "#!/getJobDetails/{{job.id}}" class = "btn btn-default">View Details</a>&nbsp;&nbsp;&nbsp;&nbsp;
+		
+			<a href = "" ng-click = "deleteJobById(job.id)" class = "btn btn-danger" ng-show = "currentUser.role == 'ADMIN'">Delete</a>		
+		
+		<!--	<a href = "#" ng-click = "" class = "btn btn-success">Edit</a>&nbsp;&nbsp;&nbsp;&nbsp;
+			<a href = "#" ng-click = "" class = "btn btn-danger">Delete</a>&nbsp;&nbsp;&nbsp;&nbsp;	-->
+			
+		</td>
+	
+
+					</tr>
+
+				</tbody>
+
+			</table>
+			<!-- End of table class -->
+
+			<br />
+
+			<hr ng-hide="currentUser.role == 'ADMIN' || currentUser.role == 'STUDENT' || currentUser.role == 'EMPLOYEE' || currentUser.role == 'ALUMNI'"   />
+
+
+		</div>
+		<!-- End of row class -->
+
+
+		<div class="row" ng-show="showJobDetails">
+			<!-- Start of second row class -->
+
+			<h3 align="left">
+				<b><i><span style="color: #FFA500">Job Details :</span></i></b>
+			</h3>
+
+			<br />
+
+			<table class="table table-bordered table-inverse">
+				<!-- start of table class -->
+
+				<thead>
+
+					<tr>
+						<th>Job Id.</th>
+						<th>Job Title</th>
+						<th>Company Name</th>
+						<th>Job Description</th>
+						<th>Required Skills</th>
+						<th>Required Experience</th>
+						<th>Salary</th>
+						<th>Location</th>
+						<th>postedOn Date</th>
+					</tr>
+
+				</thead>
+
+				<tbody>
+
+					<td>{{job.id}}</td>
+					<td>{{job.jobTitle}}</td>
+					<td>{{job.companyname}}</td>
+					<td>{{job.jobDescription}}</td>
+					<td>{{job.skillRequired}}</td>
+					<td>{{job.yrsOfExp}}</td>
+					<td>&#8377; &nbsp;{{job.salary}}</td>
+					<td>{{job.location}}</td>
+					<td>{{job.postedOn | date : "dd MMMM yyyy"}}</td>
+
+				</tbody>
+
+			</table>
+			<!-- End of table class -->
+			<!-- 
+<h4 class = "text-info"><b>Job Id. : </b>&nbsp;{{job.id}}</h4><br/>
+
+<h4 class = "text-info"><b>Job Title : </b>&nbsp;{{job.jobTitle}}</h4><br/>
+
+<h4 class = "text-info"><b>Name of the company : </b>&nbsp;{{job.companyname}}</h4><br/>
+
+<h4 class = "text-info"><b>Job Description : </b>&nbsp;{{job.jobDescription}}</h4><br/>
+
+<h4 class = "text-info"><b>Required Skills : </b>&nbsp;{{job.skillRequired}}</h4><br/>
+
+<h4 class = "text-info"><b>Experience Required : </b>&nbsp;{{job.yrsOfExp}}</h4><br/>
+
+<h4 class = "text-info"><b>Salary : </b>&nbsp; &#8377; &nbsp; {{job.salary}}</h4><br/>
+
+<h4 class = "text-info"><b>Location : </b>&nbsp;{{job.location}}</h4><br/>
+
+<h4 class = "text-info"><b>Posted On : </b>&nbsp;{{job.postedOn | date : "dd MMMM yyyy"}}</h4><br/>
+-->
+
+		</div>
+		<!-- End of second row class -->
+
+	</div>
+	<!-- end of first div -->
+
+	<br />
+	<br />
+
+</body>
+
+</html>
