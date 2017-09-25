@@ -1,0 +1,241 @@
+<h3>
+	<b><span style="color: red">{{error.message}}</span></b>
+</h3>
+
+<br />
+
+<div class="container">
+	<!-- Start of container class -->
+
+
+	<div class="row">
+		<!-- Start of first row class -->
+
+		<div class="col-md-offset-1 col-md-9">
+			<!-- Start of col-md-6 class -->
+
+			<div class="panel panel-primary">
+				<!-- Start of panel-primary class -->
+
+				<div class="panel-heading">
+					<!-- Start of panel-heading class -->
+
+					<h3>Job Details Form</h3>
+
+				</div>
+				<!-- End of panel-heading class -->
+
+				<div class="panel-body">
+					<!-- Start of panel body class -->
+
+					<!-- Start of form class -->
+					<form class="form-horizontal">
+
+						<!-- For Job Title : -->
+						<div class="form-group">
+							<!-- Start of first form-group -->
+
+							<br /> <label for="jobTitle" class="col-md-3 control-label">
+								Job Title&nbsp;&nbsp; : </label>
+
+							<div class="col-md-8">
+								<!-- Start of col-md-8 class -->
+
+								<input type="text" ng-model="job.jobTitle" class="form-control"
+									required />
+
+							</div>
+							<!-- End of col-md-8 class -->
+
+						</div>
+						<!-- End of first form-group -->
+
+						<!-- End of jobTitle part -->
+
+
+
+
+						<!-- For jobDescription : -->
+						<div class="form-group">
+							<!-- Start of first form-group -->
+
+							<br /> <label for="jobDescription"
+								class="col-md-3 control-label"> Job
+								Description&nbsp;&nbsp; : </label>
+
+							<div class="col-md-8">
+								<!-- Start of col-md-8 class -->
+
+								<textarea rows="3" ng-model="job.jobDescription"
+									class="form-control" required></textarea>
+
+							</div>
+							<!-- End of col-md-8 class -->
+
+						</div>
+						<!-- End of first form-group -->
+
+						<!-- End of jobDescription part -->
+
+
+
+
+						<!-- For skillRequired : -->
+						<div class="form-group">
+							<!-- Start of first form-group -->
+
+							<br /> <label for="skillRequired" class="col-md-3 control-label">
+								Required Skills&nbsp;&nbsp; : </label>
+
+							<div class="col-md-8">
+								<!-- Start of col-md-8 class -->
+
+								<input type="text" ng-model="job.skillRequired"
+									class="form-control" required />
+
+							</div>
+							<!-- End of col-md-8 class -->
+
+						</div>
+						<!-- End of first form-group -->
+
+						<!-- End of skillRequired part -->
+
+
+						<!-- For yrsOfExp : -->
+						<div class="form-group">
+							<!-- Start of first form-group -->
+
+							<br /> <label for="yrsOfExp" class="col-md-3 control-label">
+								Experience Required&nbsp;&nbsp; : </label>
+
+							<div class="col-md-8">
+								<!-- Start of col-md-8 class -->
+
+								<input type="text" ng-model="job.yrsOfExp" class="form-control"
+									required />
+
+							</div>
+							<!-- End of col-md-8 class -->
+
+						</div>
+						<!-- End of first form-group -->
+
+						<!-- End of yrsOfExp part -->
+
+
+						<!-- For companyname : -->
+						<div class="form-group">
+							<!-- Start of first form-group -->
+
+							<br /> <label for="companyname" class="col-md-3 control-label">
+								Name of the Company&nbsp;&nbsp; : </label>
+
+							<div class="col-md-8">
+								<!-- Start of col-md-8 class -->
+
+								<input type="text" ng-model="job.companyname"
+									class="form-control" required />
+
+							</div>
+							<!-- End of col-md-8 class -->
+
+						</div>
+						<!-- End of first form-group -->
+
+						<!-- End of companyname part -->
+
+
+
+						<!-- For salary : -->
+						<div class="form-group">
+							<!-- Start of first form-group -->
+
+							<br /> <label for="salary" class="col-md-3 control-label">
+								Salary&nbsp;&nbsp; : </label>
+
+							<div class="col-md-8">
+								<!-- Start of col-md-8 class -->
+
+								<input type="text" ng-model="job.salary" class="form-control"
+									required />
+
+							</div>
+							<!-- End of col-md-8 class -->
+
+						</div>
+						<!-- End of first form-group -->
+
+						<!-- End of salary part -->
+
+
+						<!-- For location : -->
+						<div class="form-group">
+							<!-- Start of first form-group -->
+
+							<br /> <label for="location" class="col-md-3 control-label">
+								Location&nbsp;&nbsp; : </label>
+
+							<div class="col-md-8">
+								<!-- Start of col-md-8 class -->
+
+								<input type="text" ng-model="job.location" class="form-control"
+									required />
+
+							</div>
+							<!-- End of col-md-8 class -->
+
+						</div>
+						<!-- End of first form-group -->
+
+						<!-- End of location part -->
+
+
+
+
+
+
+
+						<!-- For Register button : -->
+						<div class="form-group">
+							<!-- Start of second form-group class -->
+
+							<br />
+
+							<div class="col-md-offset-4 col-md-4">
+								<!-- Start of col-md-8 class -->
+
+								<input type="submit" ng-click="editUpdateJobDetails()"
+									value="update Job Details" class="btn btn-primary" />
+
+							</div>
+							<!-- End of col-md-8 class -->
+
+						</div>
+						<!-- End of second form-group class -->
+
+						<!-- End of Register button -->
+
+					</form>
+					<!-- End of form-class -->
+
+				</div>
+				<!-- End of panel body class -->
+
+			</div>
+			<!-- End of panel-primary class -->
+
+		</div>
+		<!-- End of col-md-6 class -->
+
+	</div>
+	<!-- End of first row class -->
+
+</div>
+<!-- End of container class -->
+
+
+
+<!--  email pattern : pattern="[A-Za-z0-9._%+-]{3,}@[a-zA-Z]{3,}([.]{1}[a-zA-Z]{2,}|[.]{1}[a-zA-Z]{2,}[.]{1}[a-zA-Z]{2,})" 
+number pattern : maxlength="10"  pattern="[0-9]{10}"
+-->
