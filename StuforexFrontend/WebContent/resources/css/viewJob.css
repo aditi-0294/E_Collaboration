@@ -1,0 +1,10 @@
+@CHARSET "ISO-8859-1";
+
+body {
+/*	background-color : black ;	
+	background-image : url("../images/job_search.png"); */
+	background-image : url("../images/viewJob_3.jpg") ;
+    background-size : 1900px ;
+    background-position : 60px 0 ;
+    
+}

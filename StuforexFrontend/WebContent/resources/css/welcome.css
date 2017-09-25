@@ -1,0 +1,28 @@
+@CHARSET "ISO-8859-1";
+
+
+h2 {
+	
+	margin-left : 80px ;
+	/*color : fuchsia ; */ /*teal*/
+}
+
+h3 {
+	
+	margin-left : 85px ;
+	/* color : teal ; */ /*cyan*/
+	
+}
+
+h4 {
+	
+	margin-left : 100px ;
+	color : turquoise ;
+}
+
+body {
+	
+	background-image : url("../images/welcome.jpg");
+    background-size : 1380px ;
+    
+}
