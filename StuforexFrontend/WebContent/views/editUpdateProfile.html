@@ -1,0 +1,241 @@
+<br />
+
+<div class="container">
+	<!-- Start of container class -->
+
+
+	<div class="row">
+		<!-- Start of first row class -->
+
+		<div class="col-md-offset-2 col-md-8">
+			<!-- Start of col-md-6 class -->
+
+			<div class="panel panel-primary">
+				<!-- Start of panel-primary class -->
+
+				<div class="panel-heading">
+					<!-- Start of panel-heading class -->
+
+					<h3>Edit Profile</h3>
+
+				</div>
+				<!-- End of panel-heading class -->
+
+				<div class="panel-body">
+					<!-- Start of panel body class -->
+
+					<!-- Start of form class -->
+					<form class="form-horizontal">
+
+
+						<!-- For username : -->
+						<div class="form-group">
+							<!-- Start of first form-group -->
+
+							<br /> <label for="username" class="col-md-3 control-label">
+								UserName&nbsp;&nbsp; : </label>
+
+							<div class="col-md-8">
+								<!-- Start of col-md-8 class -->
+
+								<input type="text" ng-model="user.username" class="form-control"
+									disabled />
+
+							</div>
+							<!-- End of col-md-8 class -->
+
+						</div>
+						<!-- End of first form-group -->
+
+						<!-- End of username part -->
+
+
+
+						<!-- For First Name : -->
+						<div class="form-group">
+							<!-- Start of first form-group -->
+
+							<br /> <label for="firstname" class="col-md-3 control-label">
+								First Name&nbsp;&nbsp; : </label>
+
+							<div class="col-md-8">
+								<!-- Start of col-md-8 class -->
+
+								<input type="text" ng-model="user.firstname"
+									class="form-control" required />
+
+							</div>
+							<!-- End of col-md-8 class -->
+
+						</div>
+						<!-- End of first form-group -->
+
+						<!-- End of First_Name part -->
+
+
+
+
+						<!-- For Last Name : -->
+						<div class="form-group">
+							<!-- Start of first form-group -->
+
+							<br /> <label for="lastname" class="col-md-3 control-label">
+								Last Name&nbsp;&nbsp; : </label>
+
+							<div class="col-md-8">
+								<!-- Start of col-md-8 class -->
+
+								<input type="text" ng-model="user.lastname" class="form-control"
+									required />
+
+							</div>
+							<!-- End of col-md-8 class -->
+
+						</div>
+						<!-- End of first form-group -->
+
+						<!-- End of last_Name part -->
+
+
+						<!-- For Email Address : -->
+						<div class="form-group">
+							<!-- Start of first form-group -->
+
+							<br /> <label for="email" class="col-md-3 control-label">
+								Email-Id.&nbsp;&nbsp; : </label>
+
+							<div class="col-md-8">
+								<!-- Start of col-md-8 class -->
+
+								<input type="email" ng-model="user.email" class="form-control"
+									required
+									pattern="[A-Za-z0-9._%+-]{3,}@[a-zA-Z]{3,}([.]{1}[a-zA-Z]{2,}|[.]{1}[a-zA-Z]{2,}[.]{1}[a-zA-Z]{2,})" />
+
+							</div>
+							<!-- End of col-md-8 class -->
+
+						</div>
+						<!-- End of first form-group -->
+
+						<!-- End of Email Address part -->
+
+
+						<!-- For Password : -->
+						<div class="form-group">
+							<!-- Start of first form-group -->
+
+							<br /> <label for="password" class="col-md-3 control-label">
+								Password&nbsp;&nbsp; : </label>
+
+							<div class="col-md-8">
+								<!-- Start of col-md-8 class -->
+
+								<input type="password" ng-model="user.password"
+									class="form-control" required />
+
+							</div>
+							<!-- End of col-md-8 class -->
+
+						</div>
+						<!-- End of first form-group -->
+
+						<!-- End of Password part -->
+
+
+
+						<!-- For Mobile Number : -->
+						<div class="form-group">
+							<!-- Start of first form-group -->
+
+							<br /> <label for="phonenumber" class="col-md-3 control-label">
+								Contact Number&nbsp;&nbsp; : </label>
+
+							<div class="col-md-8">
+								<!-- Start of col-md-8 class -->
+
+								<input type="text" ng-model="user.phonenumber"
+									pattern="[0-9]{10}" class="form-control" required />
+							</div>
+							<!-- End of col-md-8 class -->
+
+						</div>
+						<!-- End of first form-group -->
+
+						<!-- End of Mobile Number part -->
+
+
+						<!-- Select Role part : -->
+						<div class="form-group" ng-hide="currentUser.role == 'ADMIN'">
+							<!-- Start of first form-group -->
+
+							<br /> <label for="role" class="col-md-3 control-label">
+								Register As&nbsp;&nbsp; : </label>
+
+							<div class="col-md-8">
+								<!-- Start of col-md-8 class -->
+
+								<select class="form-control" name="role" ng-model="user.role"
+									required>
+									<option value="STUDENT">Student</option>
+									<option value="EMPLOYEE">Employee</option>
+									<option value="ALUMNI">Alumni</option>
+								</select>
+
+
+
+
+
+							</div>
+							<!-- End of col-md-8 class -->
+
+						</div>
+						<!-- End of first form-group -->
+
+						<!-- End of Mobile Number part -->
+
+
+
+
+						<!-- For Register button : -->
+						<div class="form-group">
+							<!-- Start of second form-group class -->
+
+							<br />
+
+							<div class="col-md-offset-4 col-md-8">
+								<!-- Start of col-md-8 class -->
+
+								<input type="submit" ng-click="updateUser()"
+									value="edit / update profile" class="btn btn-primary" />
+
+							</div>
+							<!-- End of col-md-8 class -->
+
+						</div>
+						<!-- End of second form-group class -->
+
+						<!-- End of Register button -->
+
+					</form>
+					<!-- End of form-class -->
+
+				</div>
+				<!-- End of panel body class -->
+
+			</div>
+			<!-- End of panel-primary class -->
+
+		</div>
+		<!-- End of col-md-6 class -->
+
+	</div>
+	<!-- End of first row class -->
+
+</div>
+<!-- End of container class -->
+
+
+
+<!--  email pattern : pattern="[A-Za-z0-9._%+-]{3,}@[a-zA-Z]{3,}([.]{1}[a-zA-Z]{2,}|[.]{1}[a-zA-Z]{2,}[.]{1}[a-zA-Z]{2,})" 
+number pattern : maxlength="10"  pattern="[0-9]{10}"
+-->
