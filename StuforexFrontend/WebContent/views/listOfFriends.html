@@ -1,0 +1,69 @@
+
+<div class="container">
+	<!-- start of first div -->
+
+	<div class="row">
+		<!-- start of row class -->
+
+		<h3 align="left">
+			<b><i><span style="color: #FFA500"> List of Friends :</span></i></b>
+		</h3>
+
+
+		<table class="table table-bordered">
+			<!-- start of table class -->
+
+			<br />
+
+			<thead>
+
+				<tr>
+
+					<!-- 	<th>Friend Id. </th>	-->
+
+					<th>Profile Picture</th>
+
+					<th>FromId(Username)</th>
+
+					<!-- <th>ToId</th>	-->
+
+				</tr>
+
+			</thead>
+
+			<tbody>
+
+
+				<tr ng-repeat="friends in friendList">
+					<!-- friends - local variable ; friendList : frontend - friendcontroller.js - $scope.friendList = ....  -->
+
+					<!--  for each record - 2 table data(s) are displayed  -->
+
+					<td ng-hide="friends.fromId == currentUser.username"><img
+						src="http://localhost:9090/StuforexBackend/getImage/{{friends.fromId}}"
+						height="100px" width="100px"></td>
+
+					<td ng-hide="friends.toId == currentUser.username"><img
+						src="http://localhost:9090/StuforexBackend/getImage/{{friends.toId}}"
+						height="100px" width="100px"></td>
+
+					<td ng-hide="friends.fromId == currentUser.username">{{friends.fromId}}</td>
+
+					<td ng-hide="friends.toId == currentUser.username">{{friends.toId}}</td>
+
+				</tr>
+
+			</tbody>
+
+		</table>
+		<!-- End of table class -->
+
+		<br />
+
+
+	</div>
+	<!-- End of row class -->
+
+</div>
+<!-- end of first div -->
+
