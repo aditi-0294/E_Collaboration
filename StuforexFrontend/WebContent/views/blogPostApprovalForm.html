@@ -1,0 +1,142 @@
+
+<div class="container">
+	<!-- Start of container class -->
+
+	<div class="row">
+		<!-- Start of first row class -->
+
+		<h3 align="left">
+			<b><i><span style="color: #FFA500"> Details of Blog
+						Posts : </span></i></b>
+		</h3>
+
+		<br />
+
+		<div class="col-md-offset-1 col-md-10">
+			<!-- start of col-md-8 class -->
+
+			<div class="panel panel-default">
+				<!-- start of panel-primary class -->
+
+				<div class="panel-heading">
+					<!-- Start of panel-heading class -->
+
+
+
+					<b><i><h4 align="center" class="text-primary">Blog
+								Title : &nbsp;{{blogPost.blogTitle}}</h4></i></b> <br /> <span
+						class="text-success"><strong>Created By : </strong>{{blogPost.postedBy.username}}</span>
+
+					<span class="pull-right text-success"><strong>Date
+							: </strong>{{blogPost.postedOn | date : "dd MMMM yyyy - hh:mm a"}}</span> <br />
+
+				</div>
+				<!-- end of panel-heading class -->
+
+
+				<div class="panel-body">
+					<!-- Start of panel body class -->
+
+					<b><i><h4 class="text-info">Blog Description :</h4></i></b> <br />
+
+					<span class="text-muted"> {{blogPost.blogDescription}} </span>
+
+				</div>
+				<!-- end of panel body class -->
+
+			</div>
+			<!-- end of panel-primary class -->
+
+		</div>
+		<!-- end of col-md-8 class -->
+
+	</div>
+	<!-- End of first row class -->
+
+
+	<div class="row">
+		<!-- start of second row class -->
+
+		<form class="form-horizontal">
+			<!-- start of form class -->
+
+
+			<!-- For approval status : -->
+			<div class="form-group">
+				<!-- Start of first form-group -->
+
+				<label for="blogapprove" class="col-md-3 control-label">
+					<h3 class="text-warning">
+						<b>Approval status : </b>
+					</h3>
+				</label>
+
+				<div class="col-md-offset-1 col-md-10">
+					<!-- Start of col-md-8 class -->
+
+					<span class="text-success"> <input type="radio"
+						ng-model="blogPost.approved" value="true">&nbsp; Approve
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					</span> <span class="text-danger"> <input type="radio"
+						ng-model="blogPost.approved" value="false">&nbsp; Reject
+					</span>
+
+				</div>
+				<!-- End of col-md-8 class -->
+
+			</div>
+			<!-- End of first form-group -->
+
+			<!-- End of approval status part -->
+
+
+			<!-- For Submit button : -->
+			<div class="form-group">
+				<!-- Start of second form-group class -->
+
+				<div class="col-md-offset-1 col-md-2">
+					<!-- Start of col-md-8 class -->
+
+					<input type="submit" ng-click="approveBlogPost()" value="Submit"
+						class="btn btn-primary" />
+
+				</div>
+				<!-- End of col-md-8 class -->
+
+			</div>
+			<!-- End of second form-group class -->
+
+			<!-- End of Add Comment button -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+			<!-- <input type = "radio" ng-model = "blogPost.approved" value = "true"> Approve &nbsp;&nbsp;&nbsp;
+
+<input type = "radio" ng-model = "blogPost.approved" value = "false"> Reject &nbsp;&nbsp;&nbsp;
+
+-->
+
+		</form>
+		<!-- end of form class -->
+
+	</div>
+	<!-- end of second row class -->
+
+</div>
+<!-- End of container class -->
