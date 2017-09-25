@@ -1,0 +1,121 @@
+<html>
+
+<head>
+
+<link rel = "stylesheet" href = "resources/css/jobdetails.css" />
+<style type="text/css">
+
+.table {
+		/*	background-color : #E3E4FA ;
+			color : #E5E4E2 ; */
+			color : black ;
+}
+
+
+
+
+</style>
+
+</head>
+
+<body>
+
+<div class = "container"><!-- Start of container class -->
+
+		<div class="row">
+			<!-- Start of second row class -->
+
+			<h3 align="left">
+				<b><i><span style="color: #FFA500">Job Details :</span></i></b>
+			</h3>
+
+			<br />
+
+			<table class="table table-bordered table-inverse">
+				<!-- start of table class -->
+
+				<thead>
+
+			<!-- 	<tr style = "color : #5bc0de">	-->
+					<tr>
+						<th>Job Id.</th>
+						<th>Job Title</th>
+						<th>Company Name</th>
+						<th>Job Description</th>
+						<th>Required Skills</th>
+						<th>Required Experience</th>
+						<th>Salary</th>
+						<th>Location</th>
+						<th>postedOn Date</th>
+					</tr>
+
+				</thead>
+
+				<tbody>
+
+					<td>{{job.id}}</td>
+					<td>{{job.jobTitle}}</td>
+					<td>{{job.companyname}}</td>
+					<td>{{job.jobDescription}}</td>
+					<td>{{job.skillRequired}}</td>
+					<td>{{job.yrsOfExp}}</td>
+					<td>&#8377; &nbsp;{{job.salary}}</td>
+					<td>{{job.location}}</td>
+					<td>{{job.postedOn | date : "dd MMMM yyyy"}}</td>
+
+				</tbody>
+
+			</table>
+			<!-- End of table class -->
+			<!-- 
+<h4 class = "text-info"><b>Job Id. : </b>&nbsp;{{job.id}}</h4><br/>
+
+<h4 class = "text-info"><b>Job Title : </b>&nbsp;{{job.jobTitle}}</h4><br/>
+
+<h4 class = "text-info"><b>Name of the company : </b>&nbsp;{{job.companyname}}</h4><br/>
+
+<h4 class = "text-info"><b>Job Description : </b>&nbsp;{{job.jobDescription}}</h4><br/>
+
+<h4 class = "text-info"><b>Required Skills : </b>&nbsp;{{job.skillRequired}}</h4><br/>
+
+<h4 class = "text-info"><b>Experience Required : </b>&nbsp;{{job.yrsOfExp}}</h4><br/>
+
+<h4 class = "text-info"><b>Salary : </b>&nbsp; &#8377; &nbsp; {{job.salary}}</h4><br/>
+
+<h4 class = "text-info"><b>Location : </b>&nbsp;{{job.location}}</h4><br/>
+
+<h4 class = "text-info"><b>Posted On : </b>&nbsp;{{job.postedOn | date : "dd MMMM yyyy"}}</h4><br/>
+-->
+
+		</div>
+		<!-- End of second row class -->
+
+<br/>
+<br/>
+
+<div class = "row" ng-show = "currentUser.role == 'ADMIN'"><!-- start of third row class -->
+
+<span class = "pull-right">
+
+<a href = "#!/editUpdateJobById/{{job.id}}" class = "btn btn-success">Edit</a>&nbsp;&nbsp;&nbsp;&nbsp;
+<a href = "#!/getAllJobs" class = "btn btn-info" ng-if = "currentUser.role == 'ADMIN'">Back</a>
+
+<!--  <a href = "" ng-click = "deleteJobById(job.id)" class = "btn btn-danger">Delete</a>	-->
+
+</span>
+
+</div><!-- end of third row class -->
+
+<br/>
+<br/>
+
+<div class = "row"><!-- start of first row class -->
+
+<a href = "" class = "btn btn-primary pull-left" ng-if = "currentUser.role != 'ADMIN'" ng-disabled = "true">Apply</a>
+<a href = "#!/getAllJobs" class = "btn btn-info pull-right" ng-if = "currentUser.role != 'ADMIN'">Back</a>
+
+<!-- <a href = "#!/getAllJobs" class = "btn btn-info pull-left" ng-if = "currentUser.role == 'ADMIN'">Back</a>	-->
+
+</div><!-- end of first row class -->
+
+</div><!-- End of Container class -->
