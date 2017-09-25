@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta charset="utf-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Start of BootStrap files -->
+
+<!-- <link rel = "stylesheet" href = "resources/css/bootstrap.min.css" />	-->
+
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<link
+	href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+	rel="stylesheet" />
+
+<!-- End of BootStrap files -->
+
+<!-- Start of Custom files -->
+<link rel="stylesheet" href="resources/css/bootstrap-darkly-theme.css" />
+<link rel="stylesheet" href="resources/css/my_app.css" />
+<link rel="stylesheet" href="resources/css/profilePictureUpload.css" />
+<!-- End of Custom files -->
+
+<meta charset="ISO-8859-1">
+
+<title>Stuforex | Collaboration</title>
+
+</head>
+
+
+<body ng-app="app">
+
+	<header>
+
+		<nav class="navbar navbar-default navbar-fixed-top topnav"
+			role="navigation">
+
+			<div class="container topnav">
+				<!-- Brand and toggle get grouped for better mobile display -->
+
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle" data-toggle="collapse"
+						data-target="#bs-example-navbar-collapse-1">
+						<span class="sr-only">Toggle navigation</span> <span
+							class="icon-bar"></span> <span class="icon-bar"></span> <span
+							class="icon-bar"></span>
+					</button>
+					<a class="navbar-brand topnav" href="#!/welcome"
+						ng-if="!currentUser.firstname">Stuforex</a> <a
+						class="navbar-brand topnav" href="#!/home"
+						ng-if="currentUser.firstname">Stuforex</a>
+				</div>
+				<!-- End of navbar-header -->
+
+				<!-- Collect the nav links, forms, and other content for toggling -->
+				<div class="collapse navbar-collapse"
+					id="bs-example-navbar-collapse-1">
+					<ul class="nav navbar-nav navbar-left">
+
+						<!--  Home Page -->
+						<li id="home"><a href="#!/home"
+							ng-show="currentUser.firstname">Home</a></li>
+						<!-- End of Home Page -->
+
+						<!-- saveJob Page - admin -->
+						<!-- 				<li id = "savejob"><a href = "#!/savejob" ng-show = "currentUser.role == 'ADMIN'">Save Jobs(Insert Job Details - Post Jobs)</a></li>	-->
+						<!-- End of saveJob Page -->
+
+
+						<!-- GetAllJobs Page - user and admin -->
+						<!-- 				<li id = "getAllJobs"><a href = "#!/getAllJobs" ng-show = "currentUser.firstname">Get All Job Details - view Jobs</a></li>		-->
+						<!-- End of GetAllJobs Page -->
+
+
+
+						<!-- for dropdown - jobs : -->
+						<li class="dropdown"><a href="" class="dropdown-toggle"
+							data-toggle="dropdown" ng-show="currentUser.firstname">Job
+								Section <b class="caret"></b>
+						</a>
+
+							<ul class="dropdown-menu">
+
+								<li id="savejob"><a href="#!/savejob"
+									ng-show="currentUser.role == 'ADMIN'">Post Job</a></li>
+								<li id="getAllJobs"><a href="#!/getAllJobs"
+									ng-show="currentUser.firstname">View Jobs</a></li>
+
+							</ul></li>
+
+
+						<!-- End of dropdown - jobs -->
+
+
+
+
+
+
+
+						<!-- Insert and save blog post Page - admin -->
+						<!-- 					<li id = "saveBlogPost"><a href = "#!/saveBlogPost" ng-show = "currentUser.firstname">Save Blogs(Insert Blog Details)</a></li> -->
+						<!-- Insert and save blog post Page - admin -->
+
+						<!-- for dropdown - blogs : -->
+						<li class="dropdown"><a href="" class="dropdown-toggle"
+							data-toggle="dropdown" ng-show="currentUser.firstname">Blog
+								Section <b class="caret"></b>
+						</a>
+
+							<ul class="dropdown-menu">
+
+								<li><a href="#!/getAllBlogs">View Blogs</a></li>
+								<li><a href="#!/saveBlogPost">Write Blog</a></li>
+
+							</ul></li>
+
+
+						<!-- End of dropdown - blogs -->
+
+
+
+
+						<!-- for dropdown - friends : -->
+						<li class="dropdown"><a href="" class="dropdown-toggle"
+							data-toggle="dropdown" ng-show="currentUser.firstname">Friend
+								Section <b class="caret"></b>
+						</a>
+
+							<ul class="dropdown-menu">
+
+								<li><a href="#!/suggestedUsersList">View Suggested
+										Users</a></li>
+								<li><a href="#!/pendingRequests">View Pending Requests</a></li>
+								<li><a href="#!/listOfFriends">View Friend(s) List</a>
+							</ul></li>
+
+
+						<!-- End of dropdown - friends -->
+
+
+
+						<!-- Start of chat section -->
+						<li id="chat"><a href="#!/chat"
+							ng-show="currentUser.firstname">Chat Room</a></li>
+						<!-- End of chat section -->
+
+
+
+
+						<!-- for dropdown - official - loggedIn user : -->
+						<li class="dropdown" ng-if="currentUser.firstname"><a href=""
+							class="dropdown-toggle" data-toggle="dropdown">Official
+								Section <b class="caret"></b>
+						</a>
+
+							<ul class="dropdown-menu">
+
+								<!-- About Us -->
+								<li id="about"><a href="#!/aboutUs">About Us</a></li>
+								<!-- End of About Us -->
+
+								<!-- Contact Us -->
+								<li id="contact"><a href="#!/contactUs">Contact Us</a></li>
+								<!-- End of Contact Us -->
+
+
+							</ul></li>
+
+						<!-- End of dropdown - official - loggedIn user -->
+
+
+						<!-- Contact Us and About Us page when user is not loggedIn -->
+
+						<!-- About Us -->
+						<li id="about"><a href="#!/aboutUs"
+							ng-if="!currentUser.firstname">About Us</a></li>
+						<!-- End of About Us -->
+
+						<!-- Contact Us -->
+						<li id="contact"><a href="#!/contactUs"
+							ng-if="!currentUser.firstname">Contact Us</a></li>
+						<!-- End of Contact Us -->
+
+						<!-- End of Contact Us and About Us page when user is not loggedIn -->
+
+
+					</ul>
+
+					<ul class="nav navbar-nav navbar-right">
+
+
+						<!-- Display Profile Picture -->
+
+						<li><a href="#!/uploadProfilePicture"
+							ng-show="currentUser.firstname"> <img
+								src="http://localhost:9090/StuforexBackend/getImage/{{currentUser.username}}"
+								alt="dp_img" height="30px" width="30px" class="img-rounded" />
+						</a></li>
+
+						<!-- End of Display Profile Picture -->
+
+
+
+						<!-- Display Logged In user -->
+
+						<li><a href="#!/home" ng-show="currentUser.firstname">Welcome
+								&nbsp; <!-- <span class="glyphicon glyphicon-user">-->{{currentUser.firstname}}<!-- </span> -->
+						</a></li>
+
+						<!-- End of display -->
+
+
+
+
+
+
+
+						<!-- Edit User Profile -->
+
+						<li><a href="#!/editprofile" ng-show="currentUser.firstname"><span
+								class="glyphicon glyphicon-pencil">&nbsp;Edit Profile</span></a></li>
+
+						<!-- End of Edit User Profile -->
+
+
+						<!-- SignUp / Register Page -->
+
+						<li id="register"><a href="#!/register"
+							ng-hide="currentUser.firstname"><span
+								class="glyphicon glyphicon-user"></span> Register</a></li>
+
+						<!-- End of Sign Up / Register Page -->
+
+
+						<!-- Sign In / Login Page -->
+
+						<li id="login"><a href="#!/login"
+							ng-hide="currentUser.firstname"><span
+								class="glyphicon glyphicon-log-in"></span> Login</a></li>
+
+						<!-- End Of Login Page -->
+
+
+						<!-- Logout / Sign out -->
+
+						<li id="logout"><a href="" ng-click="logout()"
+							ng-show="currentUser.firstname"> <span
+								class="glyphicon glyphicon-log-out"> Logout </span></a></li>
+
+						<!-- End of Logout -->
+
+					</ul>
+
+
+				</div>
+				<!-- /.navbar-collapse -->
+			</div>
+			<!-- /.container -->
+		</nav>
+
+	</header>
+
+	<div ng-view></div>
+
+	<br />
+	<br />
+
+	<footer>
+
+		<br /> <br />
+
+		<div class="container footer">
+			<div class="row">
+				<div class="col-lg-12">
+					<span style="color: #00FF00">
+						<p class="copyright small">Copyright &copy; . All Rights
+							Reserved by Stuforex.com - 2017 .</p>
+						<p align="right" class="small">Designed and maintained by
+							Sanaditi .</p>
+					</span>
+				</div>
+			</div>
+		</div>
+
+
+
+	</footer>
+
+</body>
+
+
+
+
+<!-- Start of Angular JS files -->
+<!-- 
+			<script	src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+		-->
+
+<script
+	src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.js"></script>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-route.js"></script>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-cookies.js"></script>
+
+<!-- End of AngularJS files -->
+
+
+
+<!-- Start of Custom AngularJS files -->
+
+<script type="text/javascript" src="js/app.js"></script>
+
+<script type="text/javascript" src="controller/usercontroller.js"></script>
+<script type="text/javascript" src="service/userservice.js"></script>
+
+<script type="text/javascript" src="controller/jobcontroller.js"></script>
+<script type="text/javascript" src="service/jobservice.js"></script>
+<script type="text/javascript" src="controller/jobviewcontroller.js"></script>
+
+<script type="text/javascript" src="controller/blogpostcontroller.js"></script>
+<script type="text/javascript" src="service/blogpostservice.js"></script>
+<script type="text/javascript"
+	src="controller/blogpostdetailcontroller.js"></script>
+
+<script type="text/javascript" src="controller/friendcontroller.js"></script>
+<script type="text/javascript" src="service/friendservice.js"></script>
+<script type="text/javascript"
+	src="controller/frienddetailcontroller.js"></script>
+
+
+<script src="resources/js/sockjs/sockjs.js"></script>
+<script src="resources/js/stomp/dist/stomp.js"></script>
+
+<script type="text/javascript" src="controller/chatcontroller.js"></script>
+<script type="text/javascript" src="service/chatservice.js"></script>
+
+<!-- End of Custom AngularJS files -->
+
+
+
+
+
+
+</html>
