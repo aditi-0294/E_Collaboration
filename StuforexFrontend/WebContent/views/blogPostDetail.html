@@ -1,0 +1,172 @@
+{{error.message}}
+<br />
+
+<div class="container">
+	<!-- Start of container class -->
+
+	<div class="row">
+		<!-- Start of first row class -->
+
+		<h3 align="left">
+			<b><i><span style="color: #FFA500"> Details of Blog
+						Posts : </span></i></b>
+		</h3>
+
+		<br />
+
+		<div class="col-md-offset-1 col-md-10">
+			<!-- start of col-md-8 class -->
+
+			<div class="panel panel-default">
+				<!-- start of panel-primary class -->
+
+				<div class="panel-heading">
+					<!-- Start of panel-heading class -->
+
+
+					<!-- <b><i><h4 align="center" style="color: #FFD801"> -->
+					<b><i><h4 align="center" class="text-primary">
+								Blog
+								<!-- #2B1B17 -->
+								Title : &nbsp;{{blogPost.blogTitle}}
+							</h4></i></b> <br /> <span style="color: #2B1B17"><strong>Created
+							By : </strong>{{blogPost.postedBy.username}}</span> <span class="pull-right"
+						style="color: #2B1B17"><strong>Date : </strong>{{blogPost.postedOn
+						| date : "dd MMMM yyyy - hh:mm a"}}</span> <br />
+
+				</div>
+				<!-- end of panel-heading class -->
+
+
+				<div class="panel-body">
+					<!-- Start of panel body class -->
+
+					<b><i><h4 class="text-info">Blog Description :</h4></i></b> <br />
+
+					<h5 class="text-muted">
+						<i>{{blogPost.blogDescription}}</i>
+					</h5>
+
+				</div>
+				<!-- end of panel body class -->
+
+			</div>
+			<!-- end of panel-primary class -->
+
+		</div>
+		<!-- end of col-md-8 class -->
+
+	</div>
+	<!-- End of first row class -->
+
+	<hr />
+
+	<div class="row">
+		<!-- start of second row class -->
+
+		<div class="panel-body">
+			<!-- Start of panel body class -->
+
+			<form class="form-horizontal">
+				<!--  Start of form class -->
+
+
+
+				<!-- For blog comments : -->
+				<div class="form-group">
+					<!-- Start of first form-group -->
+
+					<label for="blogcomments" class="col-md-3 control-label text-muted">
+						Enter Comment : </label> <br /> <br />
+					<div class="col-md-offset-1 col-md-10">
+						<!-- Start of col-md-8 class -->
+
+						<textarea rows="3" ng-model="blogComment.commentText"
+							class="form-control"></textarea>
+
+					</div>
+					<!-- End of col-md-8 class -->
+
+				</div>
+				<!-- End of first form-group -->
+
+				<!-- End of blogComments part -->
+
+				<br />
+
+
+
+				<!-- For Add Comment button : -->
+				<div class="form-group">
+					<!-- Start of second form-group class -->
+
+					<!-- 	<div class="col-md-offset-5 col-md-2">	-->
+					<div class="col-md-offset-2 col-md-2">
+						<!-- Start of col-md-8 class -->
+
+						<input type="submit" ng-click="addBlogComment()"
+							value="Post Comment" class="btn btn-primary" />
+
+
+
+					</div>
+					<!-- End of col-md-8 class -->
+
+
+
+
+					<div class="col-md-offset-4 col-md-2">
+						<!-- Start of col-md-8 class -->
+
+						<input type="submit" ng-click="getComments()"
+							value="show Comment(s)" class="btn btn-primary" />
+
+
+
+					</div>
+					<!-- End of col-md-8 class -->
+
+
+
+
+				</div>
+				<!-- End of second form-group class -->
+
+				<!-- End of Add Comment button -->
+		</div>
+		<!-- end of panel body class -->
+
+		</form>
+		<!--  Start of form class -->
+
+	</div>
+	<!-- end of second row class -->
+
+
+	<div class="row">
+		<!-- start of third row class -->
+
+		<b><i><h4 align="left" class="text-primary"
+					ng-show="showComments">Comments :</h4></i></b>
+
+		<ul ng-show="showComments">
+			<li ng-repeat="blogComment in getBlogComments">
+				<!-- blogComment : local variable ; getBlogComments : from frontend blogpostdetailscontroller.js -->
+
+				<span class="text-muted">{{blogComment.commentText}}</span><br /> <span
+				class="text-muted"><strong>Commented By : </strong>{{blogComment.commentedBy.username}}</span><br />
+				<span class="text-muted"><strong>Commented On : </strong>{{blogComment.commentedOn
+					| date : "dd MMMM yyyy - hh:mm a"}}</span><br />
+
+				<hr />
+
+			</li>
+
+		</ul>
+
+
+	</div>
+	<!-- end of third row class -->
+
+</div>
+<!-- End of container class -->
