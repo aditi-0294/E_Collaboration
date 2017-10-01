@@ -77,26 +77,27 @@ h6 {
     border-top: 3px solid #e7e7e7;
 }
 
-
-/*	p.copyright {*/
-/*	padding-right : 100px ;	
-    margin: 15px 0 0 ;	/*  15px 15px 10px 20px - top , bottom , left , right 
-}
-*/
-
-.footer {
-	position : absolute ;
-	align : bottom ;
-	margin-top : 100px ;
-/*	padding-bottom : 40px; 
-	bottom : 15px ; 
-	height : 100px ;	*/
-}
-
-
 /*
+
 .footer {
-	bottom : 15px ;
-	height : 60px ;
+ background:#f6f6f6;
+ padding:20px 0;
+ border-top:2px solid orange;
 }
+
+.footer-bottom {
+ background:#d8d8d8;
+ padding:15px 0;
+ border-top:1px solid #d9d9d9;
+ font-size:11px;
+ color:#777;
+}
+
 */
+
+
+.footer-bottom {
+
+		background : #3d3c3a ;	/* 565051 848482*/
+		margin-top : 350px ;
+}
