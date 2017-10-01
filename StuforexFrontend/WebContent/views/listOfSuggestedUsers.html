@@ -2,71 +2,100 @@
 
 <head>
 
-<!-- 
-<link rel = "stylesheet" href = "resources/css/friends.css">
--->
 
+<link rel="stylesheet" href="resources/css/friends.css">
+
+
+<style type="text/css">
+.table {
+	color: platinum;
+}
+</style>
 </head>
 
 <body>
 
-<div class="container">
-	<!-- start of first div -->
+	<div class="container">
+		<!-- start of first div -->
 
-	<div class="row">
-		<!-- start of row class -->
+		<div class="row">
+			<!-- start of row class -->
 
-		<h3 align="left">
-			<b><i><span style="color: #FFA500"> List of Suggested
-						Users :</span></i></b>
-		</h3>
-
- <div class = "row" ng-repeat="user in suggestedUserList"><!-- start of second row class -->
- 
- 
-					<!-- user - local variable ; suggestedUserList : frontend - friendcontroller.js - $scope.suggestedUserList = ....  -->
- 
- <div class = "panel"><!-- start of panel class -->
- 
- <div class = "panel-body"><!-- start of panel-body class -->
- 
- <!-- <div class = "col-md-7"><!-- start of col-md-7 class -->
- 
- <div class = "col-md-7">
- 
- <img class = "img-fluid rounded mb-3 mb-md-0" src = "http://localhost:9090/StuforexBackend/getImage/{{user.username}}" alt = "image not available" width = "450px" height = "200px">
-
- </div><!-- end of col-md-7 class -->
-
-<div class = "col-md-5"><!-- start of col-md-5 class -->
-
-<h3>{{user.firstname}}&nbsp;{{user.lastname}}</h3>
-
-<p>username &nbsp; : &nbsp;&nbsp; {{user.username}}</p>
-
-<p ng-if = "user.online">online status &nbsp; : &nbsp;&nbsp;Yes</p>
-
-<p ng-if = "!user.online">online status &nbsp; : &nbsp;&nbsp;No</p>
-
-<p>Role &nbsp; : &nbsp;&nbsp;{{user.role}}</p>
-
-<a class="btn btn-success"	ng-click="friendRequest(user.username)">Connect</a>
+			<h3 align="left">
+				<b><i><span style="color: #FFA500"> List of Suggested
+							Users :</span></i></b>
+			</h3>
 
 
-</div><!-- end of col-md-5 class -->
+			<table class="table table-bordered">
+				<!-- start of table class -->
 
- </div><!-- end of panel-body class -->
- 
- </div><!-- end of panel class -->
- 
- </div><!-- end of second row class --> 
- 
+				<br />
+
+				<thead>
+
+					<tr style="color: white">
+						<!-- #5bc0de -->
+
+						<!-- 	<th>Friend Id. </th>	-->
+
+						<th>Profile Picture</th>
+
+						<th>Username</th>
+
+						<th>Name</th>
+
+						<th>Online_Status</th>
+
+						<th>Role</th>
+
+						<th>Action</th>
+
+					</tr>
+
+				</thead>
+
+				<tbody>
+
+
+					<tr ng-repeat="user in suggestedUserList">
+						<!-- user - local variable ; suggestedUserList : frontend - friendcontroller.js - $scope.suggestedUserList = ....  -->
+
+
+						<td><img
+							src="http://localhost:9090/StuforexBackend/getImage/{{user.username}}"
+							height="100px" width="100px" class="img-circle"></td>
+
+						<td>{{user.username}}</td>
+
+						<td>{{user.firstname}}&nbsp;&nbsp;{{user.lastname}}</td>
+
+						<!--  <td>{{user.online}}</td>	-->
+
+						<td ng-if="user.online == true">Yes</td>
+						<td ng-if="user.online == false">No</td>
+
+						<td>{{user.role}}</td>
+
+						<td><a class="btn btn-success"
+							ng-click="friendRequest(user.username)">Connect</a></td>
+
+					</tr>
+
+				</tbody>
+
+			</table>
+			<!-- End of table class -->
+
+			<br />
+
+
+		</div>
+		<!-- End of row class -->
 
 	</div>
-	<!-- End of row class -->
-
-</div>
-<!-- end of first div -->
+	<!-- end of first div -->
 
 </body>
+
 </html>
