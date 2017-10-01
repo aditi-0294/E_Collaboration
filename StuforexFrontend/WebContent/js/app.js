@@ -132,7 +132,8 @@ app.config(function($routeProvider) {
 	
 	// chat room section
 	.when('/chat' , {
-		templateUrl : 'views/chats.html' ,
+		//templateUrl : 'views/chats.html' ,
+		templateUrl : 'views/chat.html' ,
 		controller : 'ChatController'
 	})
 	
