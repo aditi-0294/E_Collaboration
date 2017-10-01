@@ -1,93 +1,98 @@
+<html>
 
-<div class="container">
-	<!-- start of first div -->
+<head>
 
-	<div class="row">
-		<!-- start of row class -->
+<link href="resources/css/pendingRequest.css" rel="stylesheet">
 
-		<h3 align="left">
-			<b><i><span style="color: #FFA500"> List of Pending
-						Requests :</span></i></b>
-		</h3>
+</head>
+<body>
+	<div class="container">
+		<!-- start of first div -->
 
+		<div class="row">
+			<!-- start of row class -->
 
-		<table class="table table-bordered">
-			<!-- start of table class -->
+			<h3 align="left">
+				<b><i><span style="color: #FFA500"> List of Pending
+							Requests :</span></i></b>
+			</h3>
 
-			<br />
+			<br /> <br />
 
-			<thead>
+			<div class="col-lg-6" ng-repeat="pendingRequest in pendingRequests">
+				<!-- pendingRequest - local variable ; pendingRequests : frontend - friendcontroller.js - $scope.pendingRequests = ....  
 
-				<tr>
-
-
-					<th>Profile Picture</th>
-
-					<th>From Username</th>
-
-					<!-- 	
-	<th>Online_Status </th>
-	
-	<th>Role</th>
 -->
 
-					<th>Action</th>
 
-				</tr>
+				<div class="panel">
+					<!-- start of panel class -->
 
-			</thead>
+					<div class="panel-body">
+						<!-- start of panel-body class -->
 
-			<tbody>
+						<!-- <div class = "col-md-7"><!-- start of col-md-7 class -->
+
+						<div class="col-md-5">
+							<br /> <img class="img img-responsive"
+								src="http://localhost:9090/StuforexBackend/getImage/{{pendingRequest.fromId}}"
+								alt="image not available" width="100px" height="100px">
+
+						</div>
+						<!-- end of col-md-7 class -->
 
 
-				<tr ng-repeat="pendingRequest in pendingRequests">
-					<!-- pendingRequest - local variable ; pendingRequests : frontend - friendcontroller.js - $scope.pendingRequests = ....  -->
 
 
-					<td><img
-						src="http://localhost:9090/StuforexBackend/getImage/{{pendingRequest.fromId}}"
-						height="100px" width="100px"></td>
+						<div class="col-md-7">
+							<!-- start of col-md-5 class -->
 
-					<td><a href="#!/getUserDetails/{{pendingRequest.fromId}}">{{pendingRequest.fromId}}</a></td>
+							<h4>
+								<p>
+									username &nbsp; : &nbsp;&nbsp;<a
+										href="#!/getUserDetails/{{pendingRequest.fromId}}">{{pendingRequest.fromId}}</a>
+								</p>
+							</h4>
 
-					<!--  <td>{{user.online}}</td>
-   		
-   		<td ng-if = "user.online == true">Yes</td>
-   		<td ng-if = "user.online == false">No</td>
-   		
-   		<td>{{user.role}}</td>
--->
-
-					<td>
-						<!-- 
+							<!-- 
 	    	two parameters : [friend object with status P , status to be upadated]
 	    	ng-click = "updatePendingRequest({id,'fromId','toId','P'},'A') 
-	    --> <a href="" ng-click="updatePendingRequest(pendingRequest,'A')"
-						class="btn btn-success">Accept Request</a>&nbsp;&nbsp;&nbsp;&nbsp;
-						<a href="" ng-click="updatePendingRequest(pendingRequest,'D')"
-						class="btn btn-danger">Reject Request</a>&nbsp;&nbsp;&nbsp;&nbsp;
+-->
+							<br /> <br /> <a href=""
+								ng-click="updatePendingRequest(pendingRequest,'A')"
+								class="btn btn-success">Accept Request</a>&nbsp;&nbsp;&nbsp;&nbsp;
 
-						<!-- 
-	 	    <a href = "" ng-click = "updatePendingRequest(pendingRequest)" class = "btn btn-success" value = "pendingRequest.status = 'A'">Accept Request</a>&nbsp;&nbsp;&nbsp;&nbsp;
-	    	<a href = "" ng-click = "updatePendingRequest(pendingRequest)" class = "btn btn-danger" value = "pendingRequest.status = 'D'">Deny Request</a>&nbsp;&nbsp;&nbsp;&nbsp;
+							<br /> <br /> <a href=""
+								ng-click="updatePendingRequest(pendingRequest,'D')"
+								class="btn btn-danger">Reject Request</a>&nbsp;&nbsp;&nbsp;&nbsp;
+
+							<br /> <br />
+							<!-- 
+	 	    <a href = "" ng-click = "updatePendingRequest
+
+(pendingRequest)" class = "btn btn-success" value = "pendingRequest.status = 
+
+'A'">Accept Request</a>&nbsp;&nbsp;&nbsp;&nbsp;
+	    	<a href = "" ng-click = "updatePendingRequest(pendingRequest)" 
+
+class = "btn btn-danger" value = "pendingRequest.status = 'D'">Deny 
+
+Request</a>&nbsp;&nbsp;&nbsp;&nbsp;
 	    -->
 
-					</td>
 
-				</tr>
+						</div>
+						<!--  end of col-md-5 -->
+					</div>
+					<!-- End of row class -->
 
-			</tbody>
+				</div>
+				<!-- end of first div -->
 
-		</table>
-		<!-- End of table class -->
-
-		<br />
-
-
+				<!--  ng-click = "updatePendingRequest(pendingRequest)" value = "pendingRequest.status = 'A'" -->
+			</div>
+		</div>
 	</div>
-	<!-- End of row class -->
 
-</div>
-<!-- end of first div -->
-
-<!--  ng-click = "updatePendingRequest(pendingRequest)" value = "pendingRequest.status = 'A'" -->
+</body>
+</html>
