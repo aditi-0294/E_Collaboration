@@ -1,16 +1,27 @@
 .topnav {
-	width : 100% ;	
-	margin-left : 0px ;
+	width : 100% ;
+	margin-left : 0px;
+	margin-right : 0px; 
+	font-size : 16px ;
+} 
+
+
+/*
+.navbar-right {
 	margin-right : 0px ;
-    font-size: 12px; 
 }
+*/
+
 
 body {
-  background-color: black;/*#f5f5f5*/
+ /* background-color: black;/*#f5f5f5*/
+ background-image : url(../images/chat_1.png) ;
+ background-size : 1500px ;
+ background-position : 150px 30px ;
 }
 
 .main.container {
-	background: black; /*white*/
+	/* background: black; /*white*/
 	padding: 20px 20px;
 }
 
@@ -27,7 +38,7 @@ body {
 	display: block;
 	float: right;
 	font-weight: bold;
-	color: darkmagenta ; /* #777 */
+	color: #2C3539 ; /* #777 */
 }
 
 .chat .from small {
@@ -37,16 +48,17 @@ body {
 
 .chat .message {
 	font-size: 1.6em;
+	color : black ;
 }
 
 .chat.incomming {
 	float: left;
-	background: teal; /* #d9edf7 */
+	background: #F0F8FF ; /* #d9edf7 */
 }
 
 .chat.outgoing {
 	float: right;
-	background: teal; /* #eeeeef */
+	background: #F0F8FF ; /* #eeeeef */
 }
 
 .notification {
