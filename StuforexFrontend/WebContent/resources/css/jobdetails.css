@@ -2,8 +2,8 @@
 
 body {
 	/* background-image : url("../images/viewJob_1.jpg"); */
-	background-image : url("../images/viewJob_2.jpg");
+	background-image : url("../images/jobDetail.jpg");
 	background-size : 800px ;
-	/* background-position : 60px 15px ;	*/
-	background-position : 85px 0px;
+	/* background-position : 60px 15px ; */	
+	background-position : 0px -118px;
 }
