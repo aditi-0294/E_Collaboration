@@ -2,25 +2,43 @@
 
 <head>
 
-<link rel = "stylesheet" href = "resources/css/jobdetails.css" />
-<style type="text/css">
+<link rel="stylesheet" href="resources/css/jobdetails.css" />
 
+<style type="text/css">
 .table {
-		/*	background-color : #E3E4FA ;
+	/*	background-color : #E3E4FA ;
 			color : #E5E4E2 ; */
-			color : black ;
+	color: black;
 }
 
+.imagecontainer {
+	position: relative;
+}
 
-
-
+.img {
+	width: 100%;
+	height: auto;
+	opacity: 0.1;
+}
 </style>
 
 </head>
 
 <body>
 
-<div class = "container"><!-- Start of container class -->
+	<div class="imagecontainer">
+		<!-- start of image container -->
+
+		<img src="resources/images/viewJob_2.jpg" alt="job opennings"
+			width="1250" height="300">
+
+	</div>
+	<!-- end of image container -->
+
+	<br />
+
+	<div class="container">
+		<!-- Start of container class -->
 
 		<div class="row">
 			<!-- Start of second row class -->
@@ -36,8 +54,8 @@
 
 				<thead>
 
-			<!-- 	<tr style = "color : #5bc0de">	-->
-					<tr>
+					<!-- 	<tr style = "color : #5bc0de">	-->
+					<tr style="color: #5bc0de">
 						<th>Job Id.</th>
 						<th>Job Title</th>
 						<th>Company Name</th>
@@ -90,32 +108,35 @@
 		</div>
 		<!-- End of second row class -->
 
-<br/>
-<br/>
+		<br /> <br />
 
-<div class = "row" ng-show = "currentUser.role == 'ADMIN'"><!-- start of third row class -->
+		<div class="row" ng-show="currentUser.role == 'ADMIN'">
+			<!-- start of third row class -->
 
-<span class = "pull-right">
+			<span class="pull-right"> <a
+				href="#!/editUpdateJobById/{{job.id}}" class="btn btn-success">Edit</a>&nbsp;&nbsp;&nbsp;&nbsp;
+				<a href="#!/getAllJobs" class="btn btn-info"
+				ng-if="currentUser.role == 'ADMIN'">Back</a> <!--  <a href = "" ng-click = "deleteJobById(job.id)" class = "btn btn-danger">Delete</a>	-->
 
-<a href = "#!/editUpdateJobById/{{job.id}}" class = "btn btn-success">Edit</a>&nbsp;&nbsp;&nbsp;&nbsp;
-<a href = "#!/getAllJobs" class = "btn btn-info" ng-if = "currentUser.role == 'ADMIN'">Back</a>
+			</span>
 
-<!--  <a href = "" ng-click = "deleteJobById(job.id)" class = "btn btn-danger">Delete</a>	-->
+		</div>
+		<!-- end of third row class -->
 
-</span>
+		<br /> <br />
 
-</div><!-- end of third row class -->
+		<div class="row">
+			<!-- start of first row class -->
 
-<br/>
-<br/>
+			<a href="" class="btn btn-primary pull-left"
+				ng-if="currentUser.role != 'ADMIN'" ng-disabled="true">Apply</a> <a
+				href="#!/getAllJobs" class="btn btn-info pull-right"
+				ng-if="currentUser.role != 'ADMIN'">Back</a>
 
-<div class = "row"><!-- start of first row class -->
+			<!-- <a href = "#!/getAllJobs" class = "btn btn-info pull-left" ng-if = "currentUser.role == 'ADMIN'">Back</a>	-->
 
-<a href = "" class = "btn btn-primary pull-left" ng-if = "currentUser.role != 'ADMIN'" ng-disabled = "true">Apply</a>
-<a href = "#!/getAllJobs" class = "btn btn-info pull-right" ng-if = "currentUser.role != 'ADMIN'">Back</a>
+		</div>
+		<!-- end of first row class -->
 
-<!-- <a href = "#!/getAllJobs" class = "btn btn-info pull-left" ng-if = "currentUser.role == 'ADMIN'">Back</a>	-->
-
-</div><!-- end of first row class -->
-
-</div><!-- End of Container class -->
+	</div>
+	<!-- End of Container class -->
