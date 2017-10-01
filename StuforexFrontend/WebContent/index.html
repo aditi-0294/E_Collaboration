@@ -111,8 +111,8 @@
 
 						<!-- for dropdown - blogs : -->
 						<li class="dropdown"><a href="" class="dropdown-toggle"
-							data-toggle="dropdown" ng-show="currentUser.firstname">Blog
-								Section <b class="caret"></b>
+							data-toggle="dropdown" ng-show="currentUser.firstname"><i
+								class="fa fa-forumbee">&nbsp;Blog Section </i><b class="caret"></b>
 						</a>
 
 							<ul class="dropdown-menu">
@@ -130,8 +130,9 @@
 
 						<!-- for dropdown - friends : -->
 						<li class="dropdown"><a href="" class="dropdown-toggle"
-							data-toggle="dropdown" ng-show="currentUser.firstname">Friend
-								Section <b class="caret"></b>
+							data-toggle="dropdown" ng-show="currentUser.firstname">
+								<!-- <span class="glyphicons glyphicons-group">--> &nbsp;Friend
+								Section <!-- </span> --> <b class="caret"></b>
 						</a>
 
 							<ul class="dropdown-menu">
@@ -149,7 +150,8 @@
 
 						<!-- Start of chat section -->
 						<li id="chat"><a href="#!/chat"
-							ng-show="currentUser.firstname">Chat Room</a></li>
+							ng-show="currentUser.firstname"><i class="fa fa-comments-o">&nbsp;Chat
+									Room</i></a></li>
 						<!-- End of chat section -->
 
 
@@ -226,7 +228,7 @@
 						<!-- Edit User Profile -->
 
 						<li><a href="#!/editprofile" ng-show="currentUser.firstname"><span
-								class="glyphicon glyphicon-pencil">&nbsp;Edit Profile</span></a></li>
+								class="glyphicon glyphicon-pencil">Edit_Profile</span></a></li>
 
 						<!-- End of Edit User Profile -->
 
@@ -235,7 +237,7 @@
 
 						<li id="register"><a href="#!/register"
 							ng-hide="currentUser.firstname"><span
-								class="glyphicon glyphicon-user"></span> Register</a></li>
+								class="glyphicon glyphicon-user"></span>&nbsp;Register</a></li>
 
 						<!-- End of Sign Up / Register Page -->
 
@@ -244,7 +246,7 @@
 
 						<li id="login"><a href="#!/login"
 							ng-hide="currentUser.firstname"><span
-								class="glyphicon glyphicon-log-in"></span> Login</a></li>
+								class="glyphicon glyphicon-log-in"></span>&nbsp;Login</a></li>
 
 						<!-- End Of Login Page -->
 
@@ -253,7 +255,7 @@
 
 						<li id="logout"><a href="" ng-click="logout()"
 							ng-show="currentUser.firstname"> <span
-								class="glyphicon glyphicon-log-out"> Logout </span></a></li>
+								class="glyphicon glyphicon-log-out">&nbsp;Logout</span></a></li>
 
 						<!-- End of Logout -->
 
@@ -277,20 +279,45 @@
 
 		<br /> <br />
 
-		<div class="container footer">
-			<div class="row">
-				<div class="col-lg-12">
-					<span style="color: #00FF00">
-						<p class="copyright small">Copyright &copy; . All Rights
-							Reserved by Stuforex.com - 2017 .</p>
-						<p align="right" class="small">Designed and maintained by
-							Sanaditi .</p>
-					</span>
+		<div class="footer-bottom">
+			<!-- start of footer-bottom class -->
+
+			<div class="footer-container">
+				<!-- start of (footer) container class -->
+
+				<div class="row">
+					<!-- start of (footer) row class -->
+
+
+					<div class="col-lg-12">
+						<!-- start of col-lg-12 class -->
+
+
+
+						<span style="color: platinum">
+							<!-- #00FF00 -->
+
+							<p class="copyright small"
+								style="margin-left: 60px; margin-top: 10px">Copyright &copy;
+								. All rights reserved by Stuforex.com - 2017 .</p>
+
+							<p align="right" class="small" style="margin-right: 60px">Designed
+								and maintained by Sanaditi .</p>
+
+						</span>
+
+
+					</div>
+					<!-- end of col-lg-12 class -->
+
 				</div>
+				<!-- end of (footer) row class -->
+
 			</div>
+			<!-- end of (footer) container class -->
+
 		</div>
-
-
+		<!-- end of footer-bottom class -->
 
 	</footer>
 
