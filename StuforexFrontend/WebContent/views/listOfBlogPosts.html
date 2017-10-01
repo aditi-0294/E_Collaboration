@@ -1,151 +1,182 @@
+<html>
 
-<div class="container">
-	<!-- start of first div -->
+<head>
 
-	<div class="row" ng-show="currentUser.role == 'ADMIN'">
-		<!-- start of row class -->
+<link rel="stylesheet" href="resources/css/blogs.css">
 
-		<h3 align="left">
-			<b><i><span style="color: #FFA500"> List of Blog_Posts
-						waiting for Approval :</span></i></b>
-		</h3>
+</head>
 
+<body>
 
-		<table class="table table-bordered">
-			<!-- start of table class -->
+	<div class="container">
+		<!-- start of first div -->
 
-			<br />
+		<div class="row" ng-show="currentUser.role == 'ADMIN'">
+			<!-- start of row class -->
 
-			<thead>
-
-				<tr>
-
-					<th>Blog Id.</th>
-
-					<th>Blog Title</th>
-
-					<th>Author (username)</th>
-
-					<th>Posted On</th>
-
-					<!-- <th>Action</th> -->
-
-				</tr>
-
-			</thead>
-
-			<tbody>
+			<h3 align="left">
+				<b><i><span style="color: #FFA500"> List of
+							Blog_Posts waiting for Approval :</span></i></b>
+			</h3>
 
 
-				<tr ng-repeat="blog in getBlogPostsWaitingForApproval ">
-					<!-- blog - variable ; getBlogPostsWaitingForApproval : frontend - blogpostcontroller.js - $scope.getBlogPostsWaitingForApproval = ....  -->
+			<div class="col-md-offset-2 col-md-8">
+				<!-- start of col-md-8 class -->
+
+				<br /> <br />
+
+				<table class="table table-bordered">
+					<!-- start of table class -->
+
+					<!-- 	<br />	-->
+
+					<thead>
+
+						<tr>
+
+							<th>Blog Id.</th>
+
+							<th>Blog Title</th>
+
+							<th>Author (username)</th>
+
+							<th>Posted On</th>
+
+							<!-- <th>Action</th> -->
+
+						</tr>
+
+					</thead>
+
+					<tbody>
 
 
-					<td>{{blog.id}}</td>
-
-					<!-- <td>{{blog.blogTitle}}</td> -->
-
-					<td><a href="#!/approveBlogPost/{{blog.id}}">{{blog.blogTitle}}</a>
-					</td>
-
-					<td>{{blog.postedBy.username}}</td>
-
-					<td>{{blog.postedOn | date : "dd MMMM yyyy - hh:mm a"}}</td>
+						<tr ng-repeat="blog in getBlogPostsWaitingForApproval ">
+							<!-- blog - variable ; getBlogPostsWaitingForApproval : frontend - blogpostcontroller.js - $scope.getBlogPostsWaitingForApproval = ....  -->
 
 
-				</tr>
+							<td>{{blog.id}}</td>
 
-			</tbody>
+							<!-- <td>{{blog.blogTitle}}</td> -->
 
-		</table>
-		<!-- End of table class -->
+							<td><a href="#!/approveBlogPost/{{blog.id}}">{{blog.blogTitle}}</a>
+							</td>
 
-		<br />
-		<hr />
+							<td>{{blog.postedBy.username}}</td>
 
+							<td>{{blog.postedOn | date : "dd MMMM yyyy - hh:mm a"}}</td>
+
+
+						</tr>
+
+					</tbody>
+
+				</table>
+				<!-- End of table class -->
+
+				<br />
+
+			</div>
+			<!-- end of col-md-8 class -->
+
+			<hr />
+
+
+		</div>
+		<!-- End of row class -->
+
+
+
+
+
+
+		<div class="row">
+			<!-- start of row class -->
+
+
+
+
+			<h3 align="left">
+				<b><i><span style="color: #FFA500"
+						ng-show="currentUser.role == 'ADMIN'"> Approved List of
+							Blog_Posts :</span></i></b>
+			</h3>
+
+			<h3 align="left">
+				<b><i><span style="color: #FFA500"
+						ng-show="currentUser.role != 'ADMIN'"> Available Blog_Posts
+							:</span></i></b>
+			</h3>
+
+
+			<div class="col-md-offset-2 col-md-8">
+				<!-- start of col-md-8 class -->
+
+
+				<table class="table table-bordered">
+					<!-- start of table class -->
+
+					<br />
+
+					<thead>
+
+						<tr>
+
+							<th>Blog Id.</th>
+
+							<th>Blog Title</th>
+
+							<th>Author (username)</th>
+
+							<th>Posted On</th>
+
+							<!-- <th>Action</th> -->
+
+						</tr>
+
+					</thead>
+
+					<tbody>
+
+
+						<tr ng-repeat="blog in getApprovedListOfBlogPosts">
+							<!-- blog - variable ; getApprovedListOfBlogPosts : frontend - blogpostcontroller.js - $scope.getApprovedListOfBlogPosts = ....  -->
+
+
+							<td>{{blog.id}}</td>
+
+							<!-- <td>{{blog.blogTitle}}</td> -->
+
+							<td><a href="#!/getBlogPostById/{{blog.id}}">{{blog.blogTitle}}</a>
+							</td>
+
+							<td>{{blog.postedBy.username}}</td>
+
+							<td>{{blog.postedOn | date : "dd MMMM yyyy - hh:mm a" }}</td>
+
+
+						</tr>
+
+					</tbody>
+
+				</table>
+				<!-- End of table class -->
+
+				<br />
+
+			</div>
+			<!-- end of col-md-8 class -->
+
+
+		</div>
+		<!-- End of row class -->
 
 	</div>
-	<!-- End of row class -->
+	<!-- end of first div -->
 
+	<br />
+	<br />
 
+</body>
 
-
-
-
-	<div class="row">
-		<!-- start of row class -->
-
-		<h3 align="left">
-			<b><i><span style="color: #FFA500"
-					ng-show="currentUser.role == 'ADMIN'"> Approved List of
-						Blog_Posts :</span></i></b>
-		</h3>
-
-		<h3 align="left">
-			<b><i><span style="color: #FFA500"
-					ng-show="currentUser.role != 'ADMIN'"> Available Blog_Posts
-						:</span></i></b>
-		</h3>
-
-		<table class="table table-bordered">
-			<!-- start of table class -->
-
-			<br />
-
-			<thead>
-
-				<tr>
-
-					<th>Blog Id.</th>
-
-					<th>Blog Title</th>
-
-					<th>Author (username)</th>
-
-					<th>Posted On</th>
-
-					<!-- <th>Action</th> -->
-
-				</tr>
-
-			</thead>
-
-			<tbody>
-
-
-				<tr ng-repeat="blog in getApprovedListOfBlogPosts">
-					<!-- blog - variable ; getApprovedListOfBlogPosts : frontend - blogpostcontroller.js - $scope.getApprovedListOfBlogPosts = ....  -->
-
-
-					<td>{{blog.id}}</td>
-
-					<!-- <td>{{blog.blogTitle}}</td> -->
-
-					<td><a href="#!/getBlogPostById/{{blog.id}}">{{blog.blogTitle}}</a>
-					</td>
-
-					<td>{{blog.postedBy.username}}</td>
-
-					<td>{{blog.postedOn | date : "dd MMMM yyyy - hh:mm a" }}</td>
-
-
-				</tr>
-
-			</tbody>
-
-		</table>
-		<!-- End of table class -->
-
-		<br />
-
-
-
-	</div>
-	<!-- End of row class -->
-
-</div>
-<!-- end of first div -->
-
-<br />
-<br />
-
+</html>
