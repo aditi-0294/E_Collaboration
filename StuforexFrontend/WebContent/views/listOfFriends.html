@@ -1,69 +1,91 @@
+<html>
 
-<div class="container">
-	<!-- start of first div -->
+<head>
 
-	<div class="row">
-		<!-- start of row class -->
+<link rel="stylesheet" href="resources/css/friendList.css">
 
-		<h3 align="left">
-			<b><i><span style="color: #FFA500"> List of Friends :</span></i></b>
-		</h3>
+</head>
 
-
-		<table class="table table-bordered">
-			<!-- start of table class -->
-
-			<br />
-
-			<thead>
-
-				<tr>
-
-					<!-- 	<th>Friend Id. </th>	-->
-
-					<th>Profile Picture</th>
-
-					<th>FromId(Username)</th>
-
-					<!-- <th>ToId</th>	-->
-
-				</tr>
-
-			</thead>
-
-			<tbody>
+<body>
 
 
-				<tr ng-repeat="friends in friendList">
-					<!-- friends - local variable ; friendList : frontend - friendcontroller.js - $scope.friendList = ....  -->
 
-					<!--  for each record - 2 table data(s) are displayed  -->
+	<div class="imagecontainer">
+		<!-- start of imagecontainer class -->
 
-					<td ng-hide="friends.fromId == currentUser.username"><img
-						src="http://localhost:9090/StuforexBackend/getImage/{{friends.fromId}}"
-						height="100px" width="100px"></td>
-
-					<td ng-hide="friends.toId == currentUser.username"><img
-						src="http://localhost:9090/StuforexBackend/getImage/{{friends.toId}}"
-						height="100px" width="100px"></td>
-
-					<td ng-hide="friends.fromId == currentUser.username">{{friends.fromId}}</td>
-
-					<td ng-hide="friends.toId == currentUser.username">{{friends.toId}}</td>
-
-				</tr>
-
-			</tbody>
-
-		</table>
-		<!-- End of table class -->
-
-		<br />
-
+		<img src="resources/images/friend_1.jpg" alt="" width="1350"
+			height="300">
 
 	</div>
-	<!-- End of row class -->
+	<!-- end of imagecontainer class -->
 
-</div>
-<!-- end of first div -->
+	<br />
 
+
+	<div class="container">
+		<!-- start of first div -->
+
+		<div class="row">
+			<!-- start of row class -->
+
+			<h3 align="left">
+				<b><i><span style="color: #ffa500"> List of Friends :</span></i></b>
+				<!-- #FFA500 -->
+			</h3>
+
+			<br /> <br />
+
+			<div class="col-md-3" ng-repeat="friends in friendList">
+				<!-- start of second row class -->
+				<!-- friends - local variable ; friendList : frontend - friendcontroller.js - $scope.friendList = ....  -->
+
+				<!--  for each record - 2 table data(s) are displayed  -->
+				<div class="panel">
+
+					<div class="panel-body">
+						<!-- start of panel body class -->
+
+						<div class="col-md-7">
+
+							<p ng-hide="friends.fromId == currentUser.username">
+								<img
+									src="http://localhost:9090/StuforexBackend/getImage/{{friends.fromId}}"
+									height="100px" width="100px">
+							</p>
+
+							<p ng-hide="friends.toId == currentUser.username">
+								<img
+									src="http://localhost:9090/StuforexBackend/getImage/{{friends.toId}}"
+									height="100px" width="100px">
+							</p>
+						</div>
+
+						<div class="col-md-5">
+
+							<br /> <br />
+
+							<p ng-hide="friends.fromId == currentUser.username">{{friends.fromId}}</p>
+
+							<p ng-hide="friends.toId == currentUser.username">{{friends.toId}}</p>
+
+						</div>
+
+						<a href="" class="btn btn-success" disabled>Ping / Message</a>
+
+
+					</div>
+					<!-- end of panel body class -->
+
+				</div>
+
+			</div>
+			<!-- end of second row class -->
+		</div>
+		<!-- End of row class -->
+
+	</div>
+	<!-- end of first div -->
+
+</body>
+
+</html>
