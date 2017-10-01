@@ -10,7 +10,19 @@
  * Licensed under the BSD 3-Clause
  * https://github.com/kartik-v/bootstrap-fileinput/blob/master/LICENSE.md
  */
- 
+
+/*
+.body {
+		background-image : url("../images/profile_picture.jpg")	;
+}
+
+.img-rounded {
+    border-radius: 50%;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -o-border-radius: 50%;
+} 
+*/ 
  
 .theme-explorer .file-preview .table {
     margin: 0;
