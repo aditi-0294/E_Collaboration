@@ -66,7 +66,8 @@
 							<div class="col-md-8">
 								<!-- Start of col-md-8 class -->
 
-								<input type="text" ng-model="user.lastname" class="form-control" required />
+								<input type="text" ng-model="user.lastname" class="form-control"
+									required />
 
 							</div>
 							<!-- End of col-md-8 class -->
@@ -89,7 +90,8 @@
 							<div class="col-md-8">
 								<!-- Start of col-md-8 class -->
 
-								<input type="text" ng-model="user.username" class="form-control" required />
+								<input type="text" ng-model="user.username" class="form-control"
+									required />
 
 							</div>
 							<!-- End of col-md-8 class -->
@@ -177,7 +179,8 @@
 							<div class="col-md-8">
 								<!-- Start of col-md-8 class -->
 
-								<select class="form-control" ng-model="user.role" id="role" required>
+								<select class="form-control" ng-model="user.role" id="role"
+									required>
 									<option value="STUDENT" ng-show="false">*** Select
 										Role ***</option>
 									<option value="STUDENT">Student</option>
@@ -207,17 +210,26 @@
 
 							<br />
 
-							<div class="col-md-offset-4 col-md-8">
+							<div class="col-md-offset-4 col-md-4">
 								<!-- Start of col-md-8 class -->
 
 								<input type="submit" ng-click="registerUser()"
 									value="Register / Sign-Up" class="btn btn-primary" />
 
+
 							</div>
 							<!-- End of col-md-8 class -->
 
+
 						</div>
 						<!-- End of second form-group class -->
+
+						<p align="center">
+						<h4>
+							<b>Already have an account : </b> <a href="#!/login"><u>Sign
+									In</u></a>
+						</h4>
+						</p>
 
 						<!-- End of Register button -->
 
