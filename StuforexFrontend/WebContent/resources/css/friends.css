@@ -1,0 +1,14 @@
+@CHARSET "ISO-8859-1";
+
+body {
+	background-image : url("../images/friend_2.jpg") ;
+	background-size : 1000px;	
+	background-position : 180px 0px ;
+}
+
+img-circle {
+    border-radius: 50%;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -o-border-radius: 50%;
+}

@@ -1,0 +1,7 @@
+@CHARSET "ISO-8859-1";
+
+body {
+	background-image : url(../images/blog_1.jpg) ;
+	background-size : 1250px;
+	background-position : 50px 0px;
+}

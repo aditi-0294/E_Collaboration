@@ -1,0 +1,240 @@
+<html>
+
+<head>
+
+<meta http-equiv="Cache-Control"
+	content="no-store , no-cache , must-revalidate , max-age = 0">
+
+<!-- 
+<link href = "//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel = "stylesheet">
+-->
+
+<!-- custom css files  -->
+
+<link rel="stylesheet" href="resources/css/bootstrap-darkly-theme.css">
+<link rel="stylesheet" href="resources/css/portfolio.css">
+
+<!-- end of custom css files -->
+
+<!-- 
+<style type="text/css">
+topnav {
+	width : 100% ;
+	margin-left : 0px ;
+	margin-right : 0 px ;
+	font-size : 10 px ;
+	
+}
+
+</style>
+-->
+
+</head>
+
+<body>
+
+	<header class="container">
+		<!-- start of container class -->
+
+		<div id="heading" class="masthead">
+			<!-- start of masthead class -->
+
+			<h3 align="left">
+				<b><i><span style="color: #FFA500">Chit-Chat Areana :
+					</span> <small span style="color: teal">Online chat room </small> </i></b>
+			</h3>
+
+
+		</div>
+		<!-- end of masthead class -->
+
+	</header>
+
+	<section class="main container">
+		<!-- start of main container class -->
+
+		<div class="row">
+			<!-- start of first row class -->
+
+			<p class="lead text-info">Type in the box below and start
+				chatting !!</p>
+
+		</div>
+		<!-- end of first row class -->
+
+		<br />
+
+		<div class="row">
+			<!-- start of second row class -->
+
+			<div class="col-md-offset-1 col-md-10">
+				<!-- start of col-md-offset class -->
+
+				<div class="panel">
+					<!-- start of panel class -->
+
+					<div class="panel-body">
+						<!-- start of panel-body class -->
+
+						<form class="form-horizontal" role="form" id="chatForm"
+							ng-submit="sendMessage(chat)">
+							<!-- start of first form class -->
+
+							<div class="alert alert-info notification" id="joinedChat"
+								ng-if="latestUser"
+								ng-animate="{enter : 'fade' , leave : 'fade'}">
+								<!-- start of alert notification class -->
+
+								{{latestUser}} has joined the chat !!!
+
+							</div>
+							<!-- end of alert-notification class -->
+
+
+
+
+
+							<!-- start of recepient / receiver part : -->
+
+							<div class="form-group">
+								<!-- start of form-group class -->
+
+								<br /> <label for="to" class="col-md-3 control-label">Send
+									To &nbsp;&nbsp;: </label>
+
+								<div class="col-md-8">
+									<!-- start of col-md-8 class -->
+
+									<select class="form-control" id="to" name="to"
+										ng-model="chat.to">
+
+										<option value="">Select Recepient</option>
+
+										<option value="all">All Members(users)</option>
+
+										<option ng-repeat="user in users" value="{{user}}"
+											ng-hide="currentUser.username == user">{{capitalize(user)}}</option>
+
+									</select>
+
+								</div>
+								<!-- end of col-md-8 class -->
+
+							</div>
+							<!-- end of form-group class -->
+
+							<!--  end of recepient / receiver part -->
+
+
+
+							<!-- start of sender part -->
+
+							<div class="form-group">
+								<!-- start of second form-group class -->
+
+								<br /> <label for="message" class="col-md-3 control-label">Message
+									from&nbsp;&nbsp; : </label>
+
+								<div class="col-md-8">
+									<!-- start of col-md-8 class -->
+
+									<textarea class="form-control focus-on-click" name="message"
+										placeholder="Type message ... " rows="3"
+										ng-model="chat.message"></textarea>
+
+								</div>
+								<!-- end of col-md-8 class -->
+
+							</div>
+							<!-- end of second form-group class -->
+
+
+							<!--  end of sender part -->
+
+
+
+							<!-- start of send button -->
+
+
+							<div class="form-group">
+								<!-- start of form-group -->
+
+								<br />
+
+								<div class="col-md-offset-4 col-md-8">
+									<!-- Start of col-md-8 class -->
+
+									<input type="submit" ng-focus="focus-on-click" name="send"
+										value="send message" class="btn btn-primary" />
+
+								</div>
+								<!-- End of col-md-8 class -->
+
+
+
+
+							</div>
+							<!-- end of form-group -->
+
+
+
+
+							<!--  end of send button -->
+
+						</form>
+						<!-- end of first form class -->
+
+					</div>
+					<!-- end of panel-body class -->
+
+				</div>
+				<!-- end of panel class -->
+
+
+			</div>
+			<!-- end of col-md-offset class -->
+
+		</div>
+		<!-- end of second row class -->
+
+		<br /> <br />
+
+
+		<div class="row">
+			<!-- start of third row class -->
+
+			<div class="col-md-12" id="chats">
+				<!-- start of col-frame class -->
+
+				<div ng-repeat="chat in chats | reverse "
+					class="chat {{chat.direction}}"
+					ng-class="{'broadcast' : chat.broadcast}">
+					<!-- start of ng-repeat div class -->
+
+					<span class="from"> From : {{chat.from}} <!-- &nbsp;&nbsp;&nbsp;&nbsp; To : {{chat.to}}	-->
+
+						<small ng-if="chat.broadcast">BROADCAST</small>
+
+
+					</span> <span class="message">{{chat.message}}</span>
+
+				</div>
+				<!-- end if ng-repeat div class -->
+
+			</div>
+			<!-- end of col-frame class -->
+
+
+		</div>
+		<!-- end of third row class -->
+
+
+	</section>
+
+	<!-- </div><!-- end of main container class -->
+
+	<!-- </div><!-- end of container class -->
+
+</body>
+
+</html>
