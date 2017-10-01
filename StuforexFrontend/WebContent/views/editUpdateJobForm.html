@@ -202,14 +202,25 @@
 
 							<br />
 
-							<div class="col-md-offset-4 col-md-4">
-								<!-- Start of col-md-8 class -->
 
-								<input type="submit" ng-click="editUpdateJobDetails()"
-									value="update Job Details" class="btn btn-primary" />
+							<div class="row">
+
+								<div class="col-md-offset-2 col-md-8">
+									<!-- col-md-offset-4 col-md-4 -->
+									<!-- Start of col-md-8 class -->
+
+									<input type="submit" ng-click="editUpdateJobDetails()"
+										value="update Job Details" class="btn btn-primary" /> <a
+										href="#!/getJobDetails/{{job.id}}"
+										class="btn btn-danger pull-right">Cancel</a>
+
+								</div>
+								<!-- End of col-md-8 class -->
+
+
 
 							</div>
-							<!-- End of col-md-8 class -->
+
 
 						</div>
 						<!-- End of second form-group class -->
