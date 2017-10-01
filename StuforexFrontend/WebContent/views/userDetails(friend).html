@@ -1,3 +1,10 @@
+<html>
+
+<head>
+
+<link rel="stylesheet" href="resources/css/userDetails.css">
+
+</head>
 
 <div class="container">
 	<!-- start of container class -->
@@ -6,71 +13,79 @@
 		<!-- start of first row class -->
 
 		<h3 align="left">
-			<b><i><span style="color: #FFA500"> View Details :</span></i></b>
+			<b><i><span style="color: black"> View Details :</span></i></b>
+			<!-- #FFA500 -->
 		</h3>
 
 		<!-- to display profile picture  -->
 
-		<div class="col-xs-12 col-sm-4">
-			<!-- start of col-xs-12 col-sm-4 class -->
+		<br /> <br />
 
-			<div class="thumbnail">
-				<!-- start of thumbnail class -->
+		<div class="panel panel-body">
 
-				<img
-					src="http://localhost:9090/StuforexBackend/getImage/{{user.username}}"
-					class="img img-responsive" />
+
+
+			<div class="col-xs-12 col-sm-4">
+				<!-- start of col-xs-12 col-sm-4 class -->
+
+				<div class="thumbnail">
+					<!-- start of thumbnail class -->
+
+					<img
+						src="http://localhost:9090/StuforexBackend/getImage/{{user.username}}"
+						class="img img-responsive" />
+
+				</div>
+				<!-- end of thumbnail class -->
 
 			</div>
-			<!-- end of thumbnail class -->
+			<!-- end of col-xs-12 col-sm-4 class -->
+
+			<!-- end of profile picture display -->
+
+
+
+			<div class="col-xs-12 col-sm-8">
+				<!-- start of col-xs-12 col-sm-8 class -->
+
+				<!-- display user details -->
+
+				&nbsp;&nbsp;&nbsp;&nbsp;
+				<h4>
+					<b>Username : </b>{{user.username}}
+				</h4>
+				&nbsp;&nbsp;&nbsp;&nbsp;
+				<h4>
+					<b>First Name : </b>{{user.firstname}}
+				</h4>
+				&nbsp;&nbsp;&nbsp;&nbsp;
+				<h4>
+					<b>Last Name : </b>{{user.lastname}}
+				</h4>
+				&nbsp;&nbsp;&nbsp;&nbsp;
+				<h4>
+					<b>Email_Id. : </b>{{user.email}}
+				</h4>
+				&nbsp;&nbsp;&nbsp;&nbsp;
+				<h4>
+					<b>Contact Number : </b>{{user.phonenumber}}
+				</h4>
+
+				<!-- end of user details display -->
+
+				<br /> <br /> <a href="#!/pendingRequests" class="btn btn-primary"
+					align="center">Back</a>
+
+
+			</div>
+			<!-- end of col-xs-12 col-sm-8 class -->
+
+
 
 		</div>
-		<!-- end of col-xs-12 col-sm-4 class -->
-
-		<!-- end of profile picture display -->
-
-
-
-		<div class="col-xs-12 col-sm-8">
-			<!-- start of col-xs-12 col-sm-8 class -->
-
-			<!-- display user details -->
-
-			&nbsp;&nbsp;&nbsp;&nbsp;
-			<h4>
-				<b>Username : </b>{{user.username}}
-			</h4>
-			&nbsp;&nbsp;&nbsp;&nbsp;
-			<h4>
-				<b>First Name : </b>{{user.firstname}}
-			</h4>
-			&nbsp;&nbsp;&nbsp;&nbsp;
-			<h4>
-				<b>Last Name : </b>{{user.lastname}}
-			</h4>
-			&nbsp;&nbsp;&nbsp;&nbsp;
-			<h4>
-				<b>Email_Id. : </b>{{user.email}}
-			</h4>
-			&nbsp;&nbsp;&nbsp;&nbsp;
-			<h4>
-				<b>Contact Number : </b>{{user.phonenumber}}
-			</h4>
-
-			<!-- end of user details display -->
-
-			<br />
-			<br /> <a href="#!/pendingRequests" class="btn btn-primary"
-				align="center">Back</a>
-
-
-		</div>
-		<!-- end of col-xs-12 col-sm-8 class -->
-
-
-
+		<!-- end of first row class -->
 	</div>
-	<!-- end of first row class -->
-
 </div>
 <!-- end of container class -->
+
+</html>
