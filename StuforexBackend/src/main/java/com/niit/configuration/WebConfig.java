@@ -21,18 +21,7 @@ public class WebConfig extends WebMvcConfigurerAdapter {
 			System.out.println();
 		}
 	
-		/* for internal resource view resolver - not required ... */ 
-		/*
-		@Bean
-		public InternalResourceViewResolver internalResourceViewResolver() {
 		
-			InternalResourceViewResolver internalResourceViewResolver = new InternalResourceViewResolver() ;
-			internalResourceViewResolver.setPrefix("/WEB-INF/views/");
-			internalResourceViewResolver.setSuffix(".jsp");
-			return internalResourceViewResolver ;
-			
-		}
-		*/
 		
 		public void addResourceHandlers(ResourceHandlerRegistry registry) {
 		
@@ -43,7 +32,7 @@ public class WebConfig extends WebMvcConfigurerAdapter {
 			// To write <mvc:resources location = "/WEB-INF/resources/" mapping = "/resources/**" />
 
 			registry.addResourceHandler("/resources/**")  
-					.addResourceLocations("/WEB-INF/resources/") ; // example : to store profile_pic
+					.addResourceLocations("/WEB-INF/resources/") ; 
 		
 	}
 
