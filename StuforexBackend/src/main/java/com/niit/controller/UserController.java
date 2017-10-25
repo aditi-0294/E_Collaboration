@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.niit.dao.UserDao;
 import com.niit.model.User;
-
+import com.niit.model.EmailService;
 import com.niit.model.Error; // imported explicitly 
 
 @Controller
@@ -22,6 +22,10 @@ public class UserController {
 
 	@Autowired 
 	private UserDao userDao ;
+	
+	@Autowired
+	private EmailService emailService ;
+	
 	
 	public UserController() {
 		
@@ -64,6 +68,10 @@ public class UserController {
 				return new ResponseEntity<Error>(error , HttpStatus.NOT_ACCEPTABLE) ;
 				
 			}
+			
+			
+			emailService.sendMail(user, "Welcome to Stuforex - an online collaboration portal . Your account has been activated and the password is : " + user.getPassword() + " Regards , Stuforex team . " , "Hello " + user.getFirstname() + " " + user.getLastname() + " , Your account has been activated .... ");
+			
 			
 			userDao.registerUser(user);
 			
