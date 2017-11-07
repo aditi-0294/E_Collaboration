@@ -2,7 +2,10 @@
 
 ( IDE - Eclipse )
 
-Summary :- An online collaboration portal that enables users ( student , employee and alumni ) to interact and share their experience and knowledge . Users can browse the site to view job opportunities , create blog posts , search and make friends and join chat forums ( to chat with each other ) . In addition , users can upload profile picture and update their profile . An administrator has the functionality to post job opportunities and approve blog posts .
+Summary :- An online collaboration portal that enables registered users ( student , employee and alumni ) to interact and share their experience and knowledge .
+There are two roles :
+1. Registered Users - Users can browse the site to view job opportunities , create blog posts , search and make friends and join chat                           forums ( to chat with each other ) . In addition , they can upload profile picture and update their profile . 
+2. Administrator    - Along with the functionality of registered users , an admin has the right to post job opportunities and approve blog                       posts .
 
 Tools and Technologies :-
 
