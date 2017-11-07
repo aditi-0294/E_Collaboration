@@ -1,0 +1,92 @@
+controller.java :
+
+// method for applying job by passing job id in url and user in body
+	
+	@RequestMapping(value="job/apply/{id}",method=RequestMethod.POST)
+	public ResponseEntity<JobApplied> applyJob(@PathVariable("id") int id,@RequestBody User user)
+	{
+		System.out.println("Starting of the method applyJob!");
+		
+		JobApplied jobApplied  = new JobApplied();
+		
+	//	user = userDAO.getUser(user.getId());
+		
+	//	jobApplied.setUserId(user.getId());
+	//	jobApplied.setUserName(user.getUsername());
+		
+	//	Job job = jobDAO.getJob(id);
+		
+	//	jobApplied.setJob(job);
+		
+	//	DateTimeFormatter dateFormat = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+	//	LocalDateTime now =  LocalDateTime.now();
+		
+	//	jobApplied.setAppliedDate(LocalDate.parse(dateFormat.format(now)));
+		
+	//	jobAppliedDAO.addJobApplied(jobApplied);
+		
+		System.out.println("Yoy are successfully Job joined!");
+		
+		return new ResponseEntity<JobApplied>(jobApplied, HttpStatus.OK);
+	}
+	
+
+
+// method for fetching the user applied job list
+	
+	@RequestMapping(value="/user/jobs/applied/{id}", method=RequestMethod.GET)
+	public ResponseEntity<List<Job>> fetchJobAplied(@PathVariable("id") int id)
+	{
+		System.out.println("Starting of the method fetchAppliedJob of User!");
+		
+		List<JobApplied> jobApplied = jobAppliedDAO.list(id);
+		List<Job> jobList = new ArrayList<>();
+		for (JobApplied j : jobApplied) 
+		{
+			jobList.add(j.getJob());
+		}
+		
+		return new ResponseEntity<List<Job>>(jobList, HttpStatus.OK);
+	}
+
+==================================================================================================================================================================
+
+daoimpl.java :
+
+
+public boolean addJobApplied(JobApplied jobApplied) {
+		try {
+			sessionFactory.getCurrentSession().save(jobApplied);
+			return true;
+		} catch (Exception e) {
+			e.printStackTrace();
+			return false;
+		}
+	}
+
+
+public List<JobApplied> list(int id) {
+		
+		String selectQuery = "FROM JobApplied Where userId = '"+id+"'";
+		Query query = sessionFactory.getCurrentSession().createQuery(selectQuery);
+		return query.list();
+	}
+
+	@Override
+	public List<JobApplied> list() {
+		
+		String selectQuery = "FROM JobApplied";
+		Query query = sessionFactory.getCurrentSession().createQuery(selectQuery);
+		return query.list();
+	}
+
+@Override
+	public JobApplied getAppliedJob(int id) {
+		
+		return sessionFactory.getCurrentSession().get(JobApplied.class, id);
+	}
+
+
+==================================================================================================================================================================
+
+
